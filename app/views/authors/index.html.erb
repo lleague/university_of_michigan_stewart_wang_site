@@ -1,0 +1,20 @@
+<div id="admin_authors">
+  <div class="margin_top_bottom_one center">
+    <h2>Here are all the authors in our database.</h2>
+  </div>
+  <div class="block">
+    <%= link_to("Add New Author", new_author_path, :class => 'blue_btn shadow new centered') %>
+  </div>
+  <div class="shadow">
+    <% @authors.each do |author| %>
+    <div class="ninety_five padding_half text_left <%= cycle('white_background', 'gray_background') %>">
+      <div class="seventy inline">
+        <p class="italic bold inline gray margin_none"><%= author.name %></p>
+      </div>
+      <div class="float_right forty">
+        <%= link_to("delete", delete_author_path(author), :class => 'action delete inline float_right') %>
+        <%= link_to("edit", edit_author_path(author), :class => 'action edit inline float_right margin_right_one') %>
+      </div>
+    </div>
+    <% end %>
+</div>

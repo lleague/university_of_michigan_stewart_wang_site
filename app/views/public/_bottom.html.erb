@@ -1,0 +1,67 @@
+<div class="blue_maze full bottom shadow block centered padding_top_three padding_bottom_one">
+  <div class="twenty text_center inline_block"><%= image_tag("blockM.png", :alt => "University of Michigan", :class => "full", :style => "max-width: 90px;")%>
+  <div class="padding_top_one white text_center inline_block">
+    <p class="white padding_bottom_half"><strong>MICHIGAN MEDICINE</strong></p>
+    <p class="white padding_bottom_two">University of Michigan</p>
+  </div>
+  </div>
+
+  <!-- Container with contact info & Links -->
+  <div class="inline_block seventy text_left padding_left_five_percent">
+
+    <!-- Contact info -->
+    <div class="dotty">
+    <h3 class="italic white inline_block forty padding_bottom_one">Stewart C. Wang, M.D. Ph.D.</h3>
+    <div class="inline_block forty">
+      <div class="inline_block padding_right_five_percent padding_bottom_one">
+        <p class="light_blue padding_bottom_half">Email</p>
+        <%= mail_to "caroknox@med.umich.edu", "morphomics@umich.edu", :class => "white" %>
+      </div>
+      <div class="inline_block padding_right_five_percent padding_bottom_one">
+        <p class="light_blue padding_bottom_half">Call</p>
+        <p class="white">(734) 764-7841</p>
+      </div>
+    </div>
+    </div>
+
+    <!-- Links -->
+    <div class="padding_top_one">
+      <div class="inline_block padding_right_five_percent padding_bottom_two">
+        <p class="light_blue padding_bottom_half italic">Research</p>
+        <a href="publications">Publications</a>
+        <a href="morphomics">Morphomics</a>
+        <a href="ramp">RAMP</a>
+        <a href="mag">MAG</a>
+        <a href="mshop">MSHOP</a>
+        <a href="icam">Automotive</a>
+        <a href="research#human_modling">Human Modling</a>
+        <a href="research#computational_biomechanics">Biomechanics</a>
+      </div>
+      <div class="inline_block padding_right_five_percent padding_bottom_two">
+        <p class="light_blue padding_bottom_half italic">Education</p>
+        <a href="pedestrian_consortium">Pedestrian Consortium</a>
+        <a href="research#case_review">Crash Case Review</a>
+        <a href="education#injury_fellowship">Injury Fellowship</a>
+        <a href="http://michiganburn.org/index.shtml">Burn Training</a>
+        <a href="http://crashedu.org">Crash Training</a>
+      </div>
+      <div class="inline_block padding_right_five_percent padding_bottom_two">
+        <p class="light_blue padding_bottom_half italic">Translational</p>
+        <a href="policy_making">Policy-Making</a>
+        <a href="policy_making#injury_prediction_algorithms">Injury Prediction Algorithms</a>
+        <a href="policy_making#field_triage_criteria">Field Triage</a>
+        <a href="http://burnwoundlab.com">Burnwoundlab</a>
+        <a href="http://www.traumaburn.org/index.shtml">Traumaburn</a>
+        <a href="http://www.prenovo.com">Prenovo</a>
+      </div>
+      <div class="inline_block padding_right_five_percent padding_bottom_two">
+        <p class="light_blue padding_bottom_half italic">About</p>
+        <a href="stus_story">Stu's Story</a>
+        <a href="team">Team</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="full black">
+  <p class="white text_center small">&copy 1995-<%= Date.today.year %> Regents of the University of Michigan</p>
+</div>

@@ -1,0 +1,65 @@
+<div class="background_nodes">
+  <!-- Contains the content -->
+  <div class="overlay shadow ramp" style="margin-bottom: 10em;">
+
+    <!-- Page title -->
+    <div class="block centered">
+      <h1 class="inline_block regular centered italic margin_top_two">Publications</h1>
+    </div>
+    <hr class="sixty TB_margin_one" style="display: block; margin: .5em auto; border-top: 2px solid #ccc;">
+
+    <!-- Wraps teasers and details in one container. -->
+    <div style="display: block; margin: 1% auto; width: 95%; padding-bottom: 1em;">
+
+      <!-- Publication teasers -->
+      <div id="journals_container" class="listing full inline_block">
+        <h5 class="italic gray centered TB_margin_one">Select a publication...</h5>
+          <div class="inner_shadow gray_background gray_border rounded_corners padding_half" style="overflow: scroll;">
+            <div style="height: 100%; max-height: 550px; ">
+              <% @publications.each do |publication| %>
+                <div class="publication_teasers shift dotty ninety_five white_background padding_half gray_left" id="<%= publication.publication_id %>">
+                  <div class="inline_block padding_left_half">
+                    <p class="gray"><%= publication.month_published%> <%=publication.year_published %></p>
+                    <h6 class="italic"><%= publication.name %></h6>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div> <!-- End of the teasers container-->
+
+        <!-- Publication details. Only shown when a teaser is clicked. -->
+        <div id="abstract_container" class="listing full inline_block">
+          <h5 class="italic gray centered TB_margin_one">...and the abstract will appear here.</h5>
+          <div class="inner_shadow gray_background gray_border rounded_corners padding_half" style="height: 100%; height: 550px; overflow: scroll; ">
+            <% @publications.each do |publication| %>
+              <div class="abstract_content inline_block shadow padding_one rounded_corners gray_border white_background <%= publication.publication_id %>">
+                <h3 class="padding_bottom_half bold"><%= publication.name %></h3>
+                <h5 class="bold"><%= publication.authors.pluck(:name).join(", ") %></h5>
+                <h5 class="italic"><%= publication.citation %></h5>
+                <p class="padding_bottom_one italic"><%= simple_format(publication.abstract)%></p>
+                <a class="blue_btn block twenty centered" style="margin: 1em auto; margin-bottom: 0;" href="<%= publication.source %>">full text</a>
+              </div>
+          <% end %>
+        </div>
+      </div> <!-- End of the details container -->
+    </div> <!-- End of the teasers & details wrapper -->
+  </div> <!-- End of the white overlay -->
+</div> <!-- End of this page container (has background nodes) -->
+
+<script>
+// When a user clicks on a publication teaser, its left border turns blue and the abstract shows up.
+
+//hide all by default
+$('.abstract_content').hide(); // hides all
+
+$('.publication_teasers').click(function(event) { // When the user clicks a publication_teaser...
+  let element = event.currentTarget;
+  var publication_teaser_id = element.id;
+
+  $('.abstract_content').hide(); // hides all
+  $('.abstract_content.'+ publication_teaser_id).fadeIn();
+  $('.publication_teasers').removeClass("blue_left"); // removes the blue stripe on the left of all the publication teasers
+  $(this).addClass("blue_left"); // adds the blue stripe on the left of the clicked teaser
+});
+</script>

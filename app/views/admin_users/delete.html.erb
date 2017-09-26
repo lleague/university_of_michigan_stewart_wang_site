@@ -1,0 +1,15 @@
+
+<div id="admin_authors">
+
+  <%= form_for(@admin_users, :url => admin_user_path(@admin_users), :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to revoke this person's admin rights?</p>
+
+    <p class="italic bold"><%= f.object.first_name %> <%= f.object.last_name %></p>
+
+    <div class="form_buttons">
+      <%= f.submit("yes, revoke", :class => "blue_btn shadow margin_top_one block centered", :style => "color: #fff; border: none; cursor: pointer; font-size: 1.2em;") %>
+    </div>
+
+    <% end %>
+  </div>

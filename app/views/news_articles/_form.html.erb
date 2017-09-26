@@ -1,0 +1,39 @@
+<div class="padding_half">
+  <div id="form">
+
+    <!-- Title block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Title:</h4>
+      </div>
+      <%= f.text_field(:title, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Picture block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Picture:</h4>
+      </div>
+      <%= f.file_field :image, as: :file %>
+    </div>
+
+    <!-- Content block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block vertical_align">
+        <h4 class="inline">Content:</h4>
+      </div>
+      <%= f.text_area(:content, :class => "text_field padding_half eighty text_left relative", :style => "height: 300px; overflow: scroll; font-size: 1em;") %>
+      <br class="padding_half">
+    </div>
+
+  <!-- Title block -->
+  <div class="padding_one padding_lr_none">
+    <div class="ten inline_block">
+      <h4 class="inline">url:</h4>
+    </div>
+    <%= f.text_field(:source, :class => "text_field padding_half eighty text_left relative") %>
+  </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,69 @@
+<div class="background_nodes">
+
+  <!-- Contains the content -->
+  <div class="overlay shadow ramp" style="margin-bottom: 10em;">
+
+    <!-- Page title -->
+    <div class="block centered">
+      <h1 class="inline_block regular centered italic margin_top_two">Reference Analytic Morphomic Population (RAMP)<%= render(:partial => 'ramp_instructions') %></h1>
+    </div>
+    <hr class="sixty TB_margin_one" style="display: block; margin: .5em auto; border-top: 2px solid #ccc;">
+    <p class="centered">These charts represent measures taken from the RAMP data set v.0.0.4</p>
+    <%= mail_to "caroknox@med.umich.edu", "ADD YOUR DATA", :style => "font-size: .9em; width: 140px; margin: 1em auto;", :class => "blue_btn regular block centered" %>
+
+    <!-- Wraps teasers and details in one container. -->
+    <div style="display: block; margin: 1% auto; width: 95%; padding-bottom: 1em;">
+
+      <!-- Interactive spine image -->
+      <div id="spine_container" class="listing full inline_block">
+        <h5 class="italic gray centered TB_margin_one">Select a vertebra...</h5>
+        <div class="padding_half">
+          <%= render(:partial => 'spine') %>
+        </div>
+      </div> <!-- End of spine container-->
+
+      <!-- RAMP measures. Only shown when a vertebra is clicked. -->
+      <div id="measurement_container" class="listing full inline_block">
+        <h5 class="italic gray centered TB_margin_one">...and the measurements will appear here.</h5>
+        <div class="inner_shadow gray_background gray_border rounded_corners padding_half" style="height: 100%; height: 550px; overflow: scroll; ">
+          <% @ramp_pages.each do |ramp_page| %>
+          <!--<%= link_to("View Page",ramp_pages_path(:id) => ramp_page.ramp_id) %> -->
+          <a href="ramp/<%= ramp_page.ramp_id %>">
+            <div class="ramp_content grow shadow shadow_change ninety_five white_background quarter_margin_auto <%= ramp_page.vertebrae_number %>">
+              <img class ="max_150 thirty_five inline_block padding_right_one_percent padding_left_one_percent" src="<%= ramp_page.scan_img %>">
+              <div class="inline_block fifty_five padding_left_one_percent padding_bottom_one">
+                <h5 class="bold padding_top_one"><%= ramp_page.name %> @ <span class="uppercase"><%= ramp_page.vertebrae_number %></span></h5>
+                <p class="italic"><%= ramp_page.definition %></p>
+              </div>
+            </div>
+          <% end %>
+        </a>
+      </div>
+      </div> <!-- End of the details container -->
+
+    </div> <!-- End of the teasers & details wrapper -->
+  </div> <!-- End of the white overlay -->
+</div> <!-- End of this page container (has background nodes) -->
+
+<script>
+//hide all by default
+$('.ramp_content').hide(); // hides all
+
+$('a.vertebra').click(function(event) { // When the user clicks a vertebra on that image...
+  let element = event.currentTarget;
+  var spine_level_id = element.id;
+
+  $('.ramp_content').hide(); // hides all
+  $('.ramp_content.'+ spine_level_id).show();
+});
+</script>
+
+<script>
+// Styling changes when the user hovers over each vertebra.
+$('a.vertebra').hover(
+    function () {
+    $(this).find('.st0').toggleClass('blue_fill');
+    $(this).find('.st1').toggleClass('blue_line');
+    $(this).find('.st2').toggleClass('white_fill');
+});
+</script>

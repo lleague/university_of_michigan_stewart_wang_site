@@ -1,0 +1,27 @@
+
+<div id="admin_publications">
+  <div class="margin_top_bottom_one center">
+    <h2>RAMP Measures</h2>
+  </div>
+  <div class="block">
+    <%= link_to("Add New Measure", new_ramp_page_path, :class => 'blue_btn shadow new centered') %>
+  </div>
+  <div class="shadow">
+    <% @ramp_pages.each do |ramp_page| %>
+    <div class="ninety_five padding_half text_left <%= cycle('white_background', 'gray_background') %>">
+      <div class="vertical_align twenty inline_block">
+        <%= image_tag ramp_page.scan_img.url(:medium), :style => "width: 100%;" %>
+      </div>
+      <div class="vertical_align twenty inline_block">
+        <%= image_tag ramp_page.chart_img.url(:large), :style => "width: 100%;" %>
+      </div>
+      <div class="forty inline">
+        <p class="inline_block gray margin_none bold padding_left_one"><%= ramp_page.name %> @ <%= ramp_page.vertebrae_number %></p>
+      </div>
+      <div class="float_right fifteen">
+        <%= link_to("delete", delete_ramp_page_path(ramp_page), :class => 'action delete inline float_right') %>
+        <%= link_to("edit", edit_ramp_page_path(ramp_page), :class => 'action edit inline float_right margin_right_one') %>
+      </div>
+    </div>
+    <% end %>
+</div>

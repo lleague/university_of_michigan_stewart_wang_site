@@ -1,0 +1,45 @@
+<div class="padding_half">
+  <div id="form">
+
+    <!-- First Name block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">First Name:</h4>
+      </div>
+      <%= f.text_field(:first_name, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Last Name block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Last Name:</h4>
+      </div>
+      <%= f.text_field(:last_name, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Email block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Email:</h4>
+      </div>
+      <%= f.text_field(:email, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Username block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Username:</h4>
+      </div>
+      <%= f.text_field(:username, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Password block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Password:</h4>
+      </div>
+      <%= f.password_field(:password, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Area</title>
+    <%= stylesheet_link_tag('admin_pages', :media => 'all') %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div id="page_wrapper">
+      <div class="shadow" id="header">
+        <div class="padding_half">
+          <%= link_to "menu", admin_path, :class => "left underline bold margin_left_one" %>
+          <%= link_to "logout", access_logout_path, :class => "underline bold right margin_right_one"%>
+        </div>
+      </div>
+
+    <div id="main">
+      <% if !flash[:notice].blank? %>
+      <div class="notice" id="flash">
+        <p><%= flash[:notice] %></p>
+      </div>
+      <% end %>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+  </div>
+</div> <!-- end of #page_wrapper -->
+  </body>
+<script>
+  $('document').ready(function() {
+  setTimeout(function() {
+    $('#flash').fadeOut();
+  }, 3000);
+});
+$('input,textarea').focus(function(){
+   $(this).data('placeholder',$(this).attr('placeholder'))
+          .attr('placeholder','');
+}).blur(function(){
+   $(this).attr('placeholder',$(this).data('placeholder'));
+});
+</script>
+</html>

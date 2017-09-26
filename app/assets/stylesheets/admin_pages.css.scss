@@ -1,0 +1,216 @@
+/* Admin Pages stylesheet */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+$darkest_green: #4d8479;
+$middle_green: #17B471;
+$lightest_green: #a0dacb;
+$bright_green: #48C2A6;
+$red: #CA1D1D;
+$bright_blue: #4099ff;
+$bright_blue_darker: #3084d8;
+$bright_blue_darkest: #1F65AC;
+$white: #fff;
+
+html {font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  Helvetica, Arial, "Lucida Grande", sans-serif; height: 100%;}
+
+body{
+  background: #0283FF; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #00274C, #0283FF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #00274C, #0283FF); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #00274C, #0283FF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #00274C, #0283FF); /* Standard syntax */
+  font-size: 18px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100%;
+}
+h1, h2, h3, h4, h5, h6, p, li, a {color: #333; font-weight: normal;}
+p, li, a {font-size: 1em;}
+h4 {font-size: 1.2em;}
+
+a, a:visited {text-decoration: none;}
+a:hover, .btn:hover {cursor: pointer;}
+input {font-size: 1em;}
+
+.one_em {font-size: 1em;}
+.blue_btn {
+  font-weight: normal;
+  padding: .25em 1em;
+  border-radius: 30px;
+  background-color: $bright_blue;
+  border-color: $bright_blue_darker;
+  transition: all .2s ease;
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    background-color: $bright_blue_darker;
+    border-color: $bright_blue_darkest;
+  }
+}
+#flash {z-index: 2;}
+#header {
+  width: 100%;
+  background-color: #032442;
+  height: 43px;
+  top: 0px;
+  position: fixed;
+  z-index: 1;
+  a, p {color: #fff;}
+}
+
+#content {padding-bottom: 15em;}
+#login, #menu, #admin_publications, #publications_form, #admin_authors, #admin_journals {
+  position: relative;
+  width: 90%;
+  max-width: 350px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid #eee;
+  border-radius: 12px;
+  margin: 1em auto;
+  top: 200px;
+  padding: 1em;
+  text-align: center;
+  p {
+    margin: .5em;
+  }
+}
+#menu {max-width: 600px;}
+#admin_publications, #publications_form {
+  width: 60%;
+  max-width: none;
+  text-align: left;
+  padding: 3em;
+  p {margin: 0;}
+}
+#admin_publications {
+  top: 100px;
+}
+#publications_form {
+  width: 80%;
+}
+#admin_authors, #admin_journals {
+  top: 100px;
+  max-width: 500px;
+}
+#admin_journals {
+  max-width: 900px;
+  p {margin: 0;}
+}
+.action {margin: 0; display: block; color: #fff; font-weight: bold; text-align: center; text-decoration: underline;}
+.delete, .edit {
+background-repeat: no-repeat;
+background-position: 50%;
+}
+.edit {color: $bright_blue; margin-right: 1em;}
+.delete {color: $red;}
+
+#form {
+  .text_field {text-align: left; display: inline;}
+  h4 {padding-right: .5em;}
+  input {font-size: 1em;}
+}
+
+/* Text stying */
+.green {color: #17B471;}
+.gray {color: #555;}
+.white {color: #fff;}
+.italic {font-style: italic;}
+.bold {font-weight: bold;}
+.underline {text-decoration: underline;}
+.text_left {text-align: left;}
+.center {text-align: center;}
+
+/* Background Colors */
+.green_background {background-color: #17B471;}
+.gray_background {background-color: #eee;}
+.red {background-color: #CA1D1D;}
+
+/* Positioning rules */
+.right {position: absolute; right: 0;}
+.left {position: absolute; left: 0;}
+.float_right {float: right;}
+.float_left {float: left;}
+.inline {display: inline;}
+.inline_block {display: inline-block;}
+.block {display: block;}
+.vertical_align {vertical-align: top;}
+.left_200 {left: 200px;}
+.relative {position: relative;}
+.centered {margin: auto;}
+
+/* widths */
+.ten {width: 10%; min-width: 140px;}
+.fifteen {width: 15%;}
+.twenty {width: 20%;}
+.forty {width: 40%;}
+.fifty {width: 50%;}
+.sixty {width: 60%;}
+.seventy {width: 70%;}
+.seventy_five {width: 75%;}
+.eighty {width: 80%;}
+.min_125 {min-width: 125px;}
+
+/* padding and margins */
+.padding_half {padding: .5em;}
+.padding_lr_none {padding: 0;}
+.padding_three_quarters {padding: .75em;}
+.padding_one {padding: 1em;}
+.padding_bottom_one {padding-bottom: 1em;}
+.padding_top_one {padding-top: 1em;}
+.padding_left_one {padding-left: 1em;}
+.margin_none {margin: 0;}
+.margin_half {margin: .5em;}
+.margin_lr_none {margin-left: 0; margin-right: 0;}
+.margin_top_quarter {margin-top: .25em;}
+.margin_top_half {margin-top: .5em;}
+.margin_top_one {margin-top: 1em;}
+.margin_bottom_one {margin-bottom: 1em;}
+.margin_bottom_two {margin-bottom: 2em;}
+.margin_right_one {margin-right: 1em;}
+.margin_left_one {margin-left: 1em;}
+.margin_top_bottom_one {margin: 2em auto;}
+
+/* buttons */
+.btn {background-color: #17B471; border: 3px solid #139B61; padding: .25em 1em; border-radius: 20px; color: #fff; font-weight: bold;}
+
+.notice {
+  height: 43px;
+  width: 100%;
+  background-color: $middle_green;
+  position: absolute;
+  top: 0;
+  p {
+    color: #fff;
+    text-align: center;
+    padding-top: .75em;
+    }
+}
+
+.text_field {border: none; border: 2px solid #ccc; border-radius: 8px; padding: .25em; box-shadow: 0px;}
+.shadow, .shadow_change {box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);}
+.shadow_change {transition: box-shadow 0.2s ease;}
+.shadow_change:hover {box-shadow: 0px 0px 8px rgb(3, 131, 255);}
+.square {display: inline-block; width: 25%; padding: 1em .5em; border-radius: 5px; margin: .25em;}
+.block {display: block;}
+input .check_boxes.optional {padding-right: 1em;}
+.link {
+  text-decoration: underline;
+  color: blue;
+}
+#publication_journal_ids {font-size: 1em; width: 100%; border: none; height: 120px; overflow: scroll; border: 1px solid #ccc; border-radius: 8px; padding-left: 1em;}
+.new {color: $white; font-weight: bold; display: block; width: 180px; margin: 1em auto; text-align: center; border: 2px solid $bright_blue_darker;}
+
+.dotty {
+  border: none;
+  background-image: linear-gradient(to right, gray 33%, rgba(255,255,255,0) 0%);
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}

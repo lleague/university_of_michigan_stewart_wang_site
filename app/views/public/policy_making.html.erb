@@ -1,0 +1,103 @@
+
+<%= render(:partial => 'icam_header') %>
+
+    <!-- This is the white part of the page where all the content will be. -->
+    <div id="page" class="gray_background shadow eighty">
+      <div class="wrapper padding_top_seven inline_block">
+        <div class="sixty inline_block no_margin padding_left_seven margin_bottom_two" id="left_container">
+            <h1 class="bold inline_block">ICAM Policy-making</h1>
+            <hr class="gray_line">
+            <h3 class="padding_bottom_one">Our mission is to better understand, treat, and prevent all types of crash injuries.</h3>
+            <p class="padding_bottom_one">Our ongoing federally-funded research projects provide us with direct access to the databases of several large national multi-center studies. This data access, coupled with the internationally-recognized expertise of its researchers, allows the center to drive policy-making at multiple levels.</p>
+            <p class="padding_bottom_one">Our past research into hip injury patterns in motor vehicle crashes has already led to new federal rulemaking and testing requirements.</p>
+            <p class="padding_bottom_one">Similarly, our research and expertise guided the recent revision of field triage criteria that are used world-wide. And the center's influence in policy-making is enhanced by its cross-disciplinary educational capabilities, which support the quick dissemination and institutionalization of new policies.</p>
+            <p class="padding_bottom_one">We are already working with the Centers for Disease Control, international telematics providers, and automobile manufacturers to develop injury prediction algorithms based on vehicle telemetry that will drive trauma triage and transport protocols in the future. Our center has the advantage of strong working relationships with the automotive industry and an understanding of their perspective on safety issues. It is advantageous for industry to work proactively with our faculty to be part of new safety policy formulation rather than be merely reacting to new advancements and policies put forth by other parties.</p>
+
+
+
+
+            <div id="body_1">
+              <div id="field_triage_criteria">
+              <h3 class="padding_top_two">Field Triage Criteria</h3>
+              <hr class="dotty">
+              <p class="padding_bottom_one">Each year, the approximately 1 million emergency medical services (EMS) providers have a substantial impact on the care of injured persons and on public health in this country. The profound importance of daily on-scene triage decisions made by EMS providers is reinforced by CDC-supported research that shows that the overall risk of death was 25 percent lower when care was provided at a Level I trauma center than when it was provided at a non-trauma center.</p>
+              <p class="padding_bottom_one">The "Field Triage Decision Scheme: The National Trauma Triage Protocol" (Decision Scheme) educational initiative was developed to help EMS providers, EMS medical directors, trauma system leadership, and EMS management learn about and implement the revised Decision Scheme. This Decision Scheme, developed by the Expert Panel of which Stewart Wang is a member, was developed in 2006 in partnership with the American College of Surgeons-Committee on Trauma and the National Highway Traffic Safety Administration (NHTSA) and is grounded in current best practices in trauma triage. It has been endorsed by 17 organizations, along with concurrence from NHTSA, and is intended to be the foundation for the development, implementation, and evaluation of local and regional field triage protocols.</p>
+            </div>
+            </div>
+
+          <div id="body_2">
+            <div id="injury_prediction_algorithms">
+            <h3 class="padding_top_two">Injury Prediction Algorithms</h3>
+            <hr class="dotty">
+            <p class="padding_bottom_one">In 2007, Stewart Wang, the Director of the International Center of Automotive Medicine, was a member of a CDC-convened expert panel of more than 20 of the nation's leading emergency medical physicians, public safety and vehicle safety experts to review real-time crash data to determine how it can be used to further improve the emergency transport and treatment of crash victims.</p>
+            <p class="padding_bottom_one">Thanks to the findings of this panel, our team worked with GM and OnStar to develop an important new tool to assist emergency responders in anticipating the seriousness of a crash. This new technology called Injury Severity Prediction utilizes Automatic Collison Notification data to predict if a crash is likely to have caused severe injury to passengers. Each crash is given an Injury Severity Prediction of either "normal" or "high," helping first responders better determine what level of care is required and what medical facility is most appropriate for transport. In an MVC, seconds are precious following a traumatic injury and complications can result from the delayed treatment of injuries. With this new tool, when a medical professional responds to a crash scene, we've equipped them with information that makes them better prepared to treat crash victims and, ultimately, save more lives.</p>
+
+          </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+        </div> <!-- end of the main content container that hangs out on the left. -->
+        <div class="twenty inline_block no_margin right fixed_container white_background rounded_corners z_two padding_left_two">
+          <ul>
+            <a><li id="side_1"  onClick="$('html, body').animate({scrollTop: $('#body_1').offset().top-100}, 250);">Field Triage Criteria</li></a>
+            <a><li id="side_2"  onClick="$('html, body').animate({scrollTop: $('#body_2').offset().top-100}, 250);">Injury Prediction Algorithms</li></a>
+
+          </ul>
+        </div> <!-- end of 80% page width wrapper -->
+      </div>
+    </div>
+    </div>
+
+  <script>
+  //makes the jump-to section light up according to what section the user is looking at.
+      $(document).ready(function () {
+
+          //Chanage these to match your doc layout
+          var startchange = $("#left_container");
+          var side = ["side_1","side_2"];
+          var body = ["body_1","body_2"];
+
+
+              //$('html, body').animate({scrollTop: $("#body_5").offset().top}, 2000);
+
+
+          if (startchange.length) {
+                  $(document).scroll(function () {
+
+                  body.forEach(function(value,i) {
+                      lower = $('#' + body[i]).offset().top;
+
+                      if(i>=1){
+                          upper = $('#' + body[i-1]).offset().top;
+                      } else {
+                          upper = -1;
+                      }
+
+                      //alert($(this).scrollTop());
+                      //alert("Upper: "+upper+"  Lower: "+lower);
+
+
+                      if ( ($(this).scrollTop() > upper) && ($(this).scrollTop() < lower)){
+                        $('#' + side[i]).css({'color': '#0283FF'});
+                      } else {
+                          $('#' + side[i]).css({'color': '#444'});
+
+                      }
+
+                  });
+
+
+              });
+          }
+
+
+      });
+
+  </script>
+
+</html>

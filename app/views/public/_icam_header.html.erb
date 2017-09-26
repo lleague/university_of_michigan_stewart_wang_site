@@ -1,0 +1,90 @@
+
+<div id="icam_header">
+<!-- present on the ICAM pages -->
+<div class="background shadow_dark" style="background: #111;">
+</div> <!-- end of .background -->
+<div id="labels">
+  <a href="icam">
+  <div id="icam_logo"></div>
+  </a>
+  <a id="icam_h1" href="icam"><h1>International Center for Automotive Medicine</h1></a>
+  <nav> <!-- start of menu system -->
+    <ul class="nav-list">
+      <li class="expand light">
+        <div class="dropdown" title="Research">Research</div> <!-- Below this are all of the itmes in the 'Research' tab -->
+        <ul class="sub-menu nav-dropdown">
+          <li class="padding_one"><a href="research#icam_morphomcs">ICAM & Morphomics</a></li>
+          <li class="padding_one"><a href="pedestrian_consortium">Pedestrian Consortium</a></li>
+          <li class="padding_one"><a href="research#case_review">Case Review</a></li>
+          <li class="padding_one"><a href="research#computational_biomechanics">Computational Biomechanics</a></li>
+          <li class="padding_one"><a href="research#human_modeling">Human Modeling</a></li>
+        </ul>
+      </li> <!-- end of 'Research' -->
+      <li class="expand"><div class="dropdown"title="Education">Education</div> <!-- Below this are all of the itmes in the 'Education' tab -->
+        <ul class="sub-menu nav-dropdown">
+          <li class="padding_one"><a href="education#crash_response_training">Crash Response Training</a></li>
+          <li class="padding_one"><a href="education#injury_fellowship">ICAM Injury Fellowship</a></li>
+        </ul>
+      </li> <!-- end of 'Education' -->
+      <li class="light expand"><div class="dropdown"title="Policy">Policy</div> <!-- Below this are all of the itmes in the 'Translational' tab -->
+        <ul class="sub-menu nav-dropdown">
+          <li class="padding_one"><a href="policy_making#field_triage_criteria">Field Triage Criteria</a></li>
+          <li class="padding_one"><a href="policy_making#injury_prediction_algorithms">Injury Prediction Algorithms</a></li>
+        </ul>
+      </li> <!-- end of 'Translational' -->
+      <li class="expand dark"><div class="dropdown"title="About">About</div> <!-- Below this are all of the itmes in the 'About' tab -->
+        <ul class="sub-menu nav-dropdown">
+          <li class="padding_one"><a title="Contact" href="advisory_council">ICAM Advisory Council</a></li>
+          <li class="padding_one"><a title="Contact" href="contact">Contact</a></li>
+        </ul>
+      </li> <!-- end of 'Contact' -->
+    </ul>
+
+  </nav> <!-- That's the end of the menu system -->
+  <a class="nav-toggle" href="#"><span></span></a>
+
+</div> <!-- That's the end of #labels -->
+
+</div> <!-- end of icam header -->
+
+
+<script>
+//Makes the entire area of the <li> clickable instead of just the <a>
+$("li").click(function() {
+  window.location = $(this).find("a").attr("href");
+  return false;
+});
+
+// Make chilren items slide down and become visible when the user hovers over the parent
+// This is only used in the nav so far
+</script>
+
+
+
+<script>
+// Makes the hamburger menu turn into an X when clicked
+$('.nav-toggle').on('click', function() {
+  this.classList.toggle('active');
+});
+$('.nav-toggle').click(function() {
+  $('nav').toggle();
+});
+
+$('.sub-menu').hide(); // hide all the sub menus by default
+$('.sub-menu').hide(); // hide all the sub menus by default
+$('div.dropdown').click(function(){ // when user clicks on a .dropdown...
+  $(this).next().toggle(250); // the second child comes out
+});
+
+
+$('.expand').hover(function(){ // when user hovers over .dropdown...
+
+    $(this).children('.sub-menu').slideDown(250); // the sub menu comes out
+    },
+    function(){
+      $(this).children('.sub-menu').slideUp(250); // does the reverse
+      }
+    );
+
+
+</script>

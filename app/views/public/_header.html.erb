@@ -1,0 +1,121 @@
+<div id="global_header">
+<!-- This is for the top bar that's present on every page. -->
+<div class="background shadow_dark">
+</div> <!-- That's the end of .background -->
+<div id="labels">
+  <a href="#">
+  <div id="umich_logo"></div>
+  </a>
+  <a href="./"><h1>Stewart C. Wang, M.D., Ph.D</h1></a>
+  <nav> <!-- This is the start of the menu system -->
+    <ul class="nav-list">
+      <li class="expand light">
+        <div class="dropdown" title="Research">Research</div> <!-- Below this are all of the itmes in the 'Research' tab -->
+        <ul class="sub-menu">
+          <li class="expand"><div class="dropdown" title="Medical">Medical</div> <!-- Below this are all of the items in the 'Medical' tab -->
+            <ul class="sub-menu nav-dropdown">
+              <li><a class="dropdown" title="Morphomics" href="morphomics">Morphomics</a></li>
+              <li><a class="dropdown" title="MAG" href="mag">MAG</a></li>
+              <li><a class="dropdown" title="RAMP" href="ramp">RAMP</a></li>
+              <li><a class="dropdown" title="MSHOP" href="mshop">MSHOP</a></li>
+              <li><a class="dropdown" title="Burn/Basic Science" href="http://michiganburn.org/index.shtml">Burn/Basic Science</a></li>
+              <li><a class="dropdown" title="B&W Ointment" href="http://localhost:3000/seeking_common_ground">B&W Ointment</a></li>
+            </ul>
+          </li> <!-- That's the end of the 'Medical' tab -->
+          <li class="expand"><div class="dropdown" title="Automotive">Automotive</div> <!-- Below this are all of the items in the 'Automotive' tab -->
+            <ul class="sub-menu nav-dropdown">
+              <li><a title="ICAM" href="icam">ICAM</a></li>
+              <li><a title="Case Review" href="research#case_review">Case Review</a></li>
+              <li><a title="Computational Biomechanics" href="research#computational_biomechanics">Computational Biomechanics</a></li>
+              <li><a title="Human Modeling" href="research#human_modeling">Human Modeling</a></li>
+            </ul>
+          </li> <!-- That's the end of the 'Automotive' tab -->
+          <li class="no-children "><a title="Publications" href="publications">Publications</a></li>
+        </ul>
+      </li> <!-- That's the end of the 'Research' tab -->
+      <li class="expand"><div class="dropdown"title="Education">Education</div> <!-- Below this are all of the itmes in the 'Education' tab -->
+        <ul class="sub-menu nav-dropdown">
+          <li class="no-children "><a title="Training & Modules" href="http://crashedu.org">Training & Modules</a></li>
+          <li class="no-children"><a title="Collaboration/Fellowship" href="education#injury_fellowship">Fellowship</a></li>
+        </ul>
+      </li> <!-- That's the end of the 'Education' tab -->
+      <li class="light expand"><div class="dropdown"title="Translational">Translational</div> <!-- Below this are all of the itmes in the 'Translational' tab -->
+        <ul class="sub-menu nav-dropdown">
+          <li class="expand"><div class="dropdown" title="International">International</div> <!-- Below this are all of the itmes in the 'International' tab -->
+            <ul class="sub-menu">
+                <li><a title="Together for Safer Roads" href="http://www.togetherforsaferroads.org">TSR</a></li>
+                <li><a title="Global Road Safety Partnership" href="http://www.grsproadsafety.org">GRSP</a></li>
+                <li><a title="Federal Highway Research Institute (Germany)" href="http://www.bast.de/EN/Home/home_node.html">BASt</a></li>
+              </ul>
+          </li> <!-- That's the end of the 'International' tab -->
+          <li class="expand"><div class="dropdown" title="National">National</div> <!-- Below this are all of the itmes in the 'National' tab -->
+            <ul class="sub-menu nav-dropdown">
+              <li><a title="NHTSA" href="http://www.nhtsa.gov">NHTSA</a></li>
+              <li><a title="CDC" href="http://www.cdc.gov">CDC</a></li>
+            </ul>
+          </li> <!-- That's the end of the 'National' tab -->
+          <li class="expand"><div class="dropdown" title="State">State</div> <!-- Below this are all of the itmes in the 'State' tab -->
+            <ul class="sub-menu nav-dropdown">
+              <li><a title="State Centers" href="http://michiganburn.org/index.shtml">State Centers</a></li>
+              <li><a title="University of Michigan" href="http://www.med.umich.edu">University of Michigan</a></li>
+            </ul>
+          </li> <!-- That's the end of the 'State' tab -->
+          <li class="no-children"><a title="Prenovo" href="http://www.prenovo.com">Prenovo</a></li>
+          <li class="no-children"><a title="Field Triage" href="https://www.facs.org/~/media/files/quality%20programs/trauma/vrc%20resources/6_guidelines%20field%20triage%202011.ashx">Field Triage</a></li>
+        </ul>
+      </li> <!-- That's the end of the 'Translational' tab -->
+      <li class="expand dark"><div class="dropdown"title="About">About</div> <!-- Below this are all of the itmes in the 'About' tab -->
+        <ul class="sub-menu nav-dropdown">
+          <li class="no-children"><a title="Stu&#39;s Story" href="stus_story">Stu&#39;s Story</a></li>
+          <li class="no-children"><a title="Team" href="team">Team</a></li>
+        </ul>
+      </li> <!-- That's the end of the 'About' tab -->
+    </ul>
+
+  </nav> <!-- That's the end of the menu system -->
+  <a class="nav-toggle" href="#"><span></span></a>
+
+</div> <!-- That's the end of #labels -->
+</div> <!-- end of global header -->
+
+
+<script>
+//Makes the entire area of the <li> clickable instead of just the <a>
+$("li").click(function() {
+  window.location = $(this).find("a").attr("href");
+  return false;
+});
+
+// Make chilren items slide down and become visible when the user hovers over the parent
+// This is only used in the nav so far
+</script>
+
+
+
+<script>
+// Makes the hamburger menu turn into an X when clicked
+$('.nav-toggle').on('click', function() {
+  this.classList.toggle('active');
+});
+$('.nav-toggle').click(function() {
+  $('nav').toggle();
+});
+
+$('.sub-menu').hide(); // hide all the sub menus by default
+$('.sub-menu').hide(); // hide all the sub menus by default
+$('div.dropdown').click(function(){ // when user clicks on a .dropdown...
+  $(this).next().toggle(250); // the second child comes out
+});
+
+
+$('.expand').hover(function(){ // when user hovers over .dropdown...
+
+    $(this).children('.sub-menu').slideDown(250); // the sub menu comes out
+    },
+    function(){
+      $(this).children('.sub-menu').slideUp(250); // does the reverse
+      }
+    );
+
+
+</script>

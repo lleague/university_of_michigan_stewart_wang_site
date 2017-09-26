@@ -1,0 +1,80 @@
+<div id="page" class="shadow" >
+
+  <div class="block centered" style="padding-top: 200px;">
+    <h2 class="inline_block regular">Team</h2>
+    <div class="block centered margin_top_one margin_bottom_one">
+  <a id="faculty" class="toggle_btn underline italic bold gray bright_blue margin_one">Faculty</a>
+  <a id="staff" class="toggle_btn underline italic bold gray margin_one">Staff</a>
+</div>
+</div>
+  <hr class="sixty TB_margin_one" style="display: block; margin: .5em auto; border-top: 2px solid #ccc;">
+
+  <div class="centered padding_top_two ninety">
+    <% @team_members.each do |team_member| %>
+      <a id="<%= team_member.team_member_id %>" class="grow twenty_four inline_block team_member margin_top_one margin_bottom_one <%= team_member.team_member_type%>" style="min-width: 300px;">
+        <div class="inline_block padding_left_half centered">
+          <%= image_tag(team_member.image, :class => "block") %>
+          <h5 class="padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %> <%= team_member.degree %></h5>
+          <p class="italic"><%= team_member.title %></p>
+        </div>
+      </a>
+    <% end %>
+  </div>
+  <% @team_members.each do |team_member| %>
+  <div class="bio full <%= team_member.team_member_id %>">
+    <div class="full block centered padding_top_three" style="position: fixed; height: 100vh; top: 0; z-index: 2; background-color: black;">
+      <div class="bio_area inline_block white_background rounded_corners centered shadow eighty margin_top_two" style="height: 80%; overflow: scroll;">
+        <div class="exit" style="width: 100%; height: 45px;"></div>
+        <%= image_tag(team_member.image, :class => "centered") %>
+        <div class="padding_two">
+          <h3 class="padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %>, <%= team_member.degree %></h3>
+          <p class="italic fifty padding_one"><%= team_member.title %></p>
+          <p class="text_left"><%= team_member.bio %></p>
+        </div>
+      </div>
+    </div>
+      </div>
+      <% end %>
+
+<script>
+  //hide all by default
+  $('.faculty').hide(); // hides both inputs by default
+  $('.staff').hide(); // hides both inputs by default
+  $('.icam_advisory_council').hide(); // hides both inputs by default
+  $('.faculty').fadeIn(1000); // hides both inputs by default
+</script>
+
+<script>
+//hide all by default
+$('.staff').hide(); // hides all team members by default
+
+$('.toggle_btn').click(function(){ // but if the user clicks one of the toggle buttons...
+  let element = event.currentTarget;
+  var input_id = element.id;
+  $('.team_member').hide(); // hides all team members
+  $('.team_member.'+ input_id).fadeIn(); // shows the team members that correspond to the button
+  $('.toggle_btn').toggleClass("bright_blue"); // changes colors
+});
+</script>
+
+
+
+<script>
+//hide all by default
+$('.bio').hide(); // hides all
+
+$('a.team_member').click(function(event) { // When the user clicks a vertebra on that image...
+  let element = event.currentTarget;
+  var team_member_id = element.id;
+  $('.bio').hide(); // hides all
+  $('.bio.'+ team_member_id).fadeIn(200);
+});
+  </script>
+<script>
+  $('.exit').click(function(event) {
+    $('.bio').fadeOut(200);
+});
+</script>
+
+
+</div>

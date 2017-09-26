@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <%= stylesheet_link_tag('public', :media => 'all') %>
+    <!-- This pulls in the html meta info, scripts, the CSS. -->
+    <%= render(:partial => 'head_contents') %>
+  </head>
+  <body>
+    <!-- This pulls in the fixed top bar, the site nav, and the search. -->
+    <%= render(:partial => 'header') %>
+    <div>
+      <%= yield %>
+    </div>
+    <%= render(:partial => 'bottom') %>
+
+  </body>
+  <%= javascript_include_tag 'responsiveslides.min' %>
+
+  <script>
+      $(document).ready(function () {
+        $("#slides0").responsiveSlides({
+              auto: true,             // Boolean: Animate automatically, true or false
+              speed: 1600,            // Integer: Speed of the transition, in milliseconds
+              timeout: 5000,          // Integer: Time between slide transitions, in milliseconds
+              pager: false,           // Boolean: Show pager, true or false
+              nav: true,             // Boolean: Show navigation, true or false
+              random: false,          // Boolean: Randomize the order of the slides, true or false
+              pause: false,           // Boolean: Pause on hover, true or false
+              pauseControls: true,
+              prevText: "",   // String: Text for the "previous" button
+              nextText: ""         // Boolean: Pause when hovering controls, true or false
+              //before: function(){},   // Function: Before callback
+              //after: function(){}     // Function: After callback
+        });
+      });
+  </script>
+  <script>
+  // When the page loads, everything with .fade will fade in.
+   $(document).ready(function(){
+     $(".fade").hide();
+     $(".fade").delay(500).fadeIn(500);
+   })
+  </script>
+</html>

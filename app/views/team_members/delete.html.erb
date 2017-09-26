@@ -1,0 +1,15 @@
+
+<div id="admin_authors">
+
+  <%= form_for(@team_members, :url => team_member_path(@team_members), :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to remove this person from the team?</p>
+
+    <p class="italic bold"><%= f.object.first_name %> <%= f.object.last_name %></p>
+
+    <div class="form_buttons">
+      <%= f.submit("yes, delete", :class => "blue_btn shadow margin_top_one block centered", :style => "color: #fff; border: none; cursor: pointer; font-size: 1.2em;") %>
+    </div>
+
+    <% end %>
+  </div>

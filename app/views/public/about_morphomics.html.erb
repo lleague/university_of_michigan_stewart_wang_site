@@ -1,0 +1,99 @@
+<div id="page" class="shadow relative morphomics">
+<%= image_tag('morphomics_diagram.jpg', :class => "full") %>
+  <div id="morphomics_title" class="eighty centered absolute">
+    <div class="relative" style="left: -50%;">
+    <h1 class="white margin_bottom_one_percent">Analytic Morphomics</h1>
+  </div>
+  </div>
+
+  <!-- Morphomics Text -->
+  <div id="morphomics_text" class="eighty centered absolute">
+    <div class="relative" style="left: -50%" >
+      <p class="bold white italic">Medical imaging is captured in pristine condition while patient response to treatment is progressively observed. Unlike many of the other "omics" bio-markers that need to be studied using routinely collected samples that are analyzed and destroyed in the process, these "natural experiments" have long been the source of discernments that have cultivated medical advances.</p>
+    </div>
+  </div>
+
+  <!-- Genes -->
+  <div class="hideme centered absolute" style="top: 18%; left: 50%;" >
+    <h1 class="margin_bottom_one_percent">Genes</h1>
+    <p class="italic">genome</p>
+  </div>
+
+  <!-- mRNA -->
+  <div class="hideme centered absolute" style="top: 25.5%; left: 37%" >
+    <h1 class="margin_bottom_one_percent">mRNA</h1>
+    <p class="italic">transcriptome</p>
+  </div>
+
+  <!-- Protein -->
+  <div class="hideme centered absolute" style="top: 36.5%; left: 60%;" >
+    <h1 class="margin_bottom_one_percent">Protein</h1>
+    <p class="italic">proteome</p>
+  </div>
+
+  <!-- Nutrition -->
+  <div class="hideme centered absolute" style="top: 42%; left: 21%;" >
+    <h1 class="margin_bottom_one_percent">Nutrition</h1>
+    <p class="italic">nutritionome</p>
+  </div>
+
+  <!-- Complexes -->
+  <div class="hideme centered absolute" style="top: 47%; left: 23%;" >
+    <h1 class="margin_bottom_one_percent">Complexes</h1>
+    <p class="italic">interactome</p>
+  </div>
+
+  <!-- Cells & Tissues -->
+  <div class="hideme centered absolute" style="top: 58%; left: 57%;" >
+    <h1 class="margin_bottom_one_percent">Cells & Tissues</h1>
+    <p class="italic">cellome</p>
+  </div>
+
+  <!-- Mileau -->
+  <div class="hideme centered absolute" style="top: 67%; left: 59%;" >
+    <h1 class="margin_bottom_one_percent">Milieu</h1>
+    <p class="italic">microbiome</p>
+  </div>
+
+  <!-- Habitat -->
+  <div class="hideme centered absolute" style="top: 74%; left: 40%;" >
+    <h1 class="margin_bottom_one_percent">Habitat</h1>
+    <p class="italic">environmentome</p>
+  </div>
+
+  <!-- Disease -->
+  <div class="hideme centered absolute" style="top: 77%; left: 57%;" >
+    <h1 class="margin_bottom_one_percent">Disease</h1>
+    <p class="italic">pathome</p>
+  </div>
+
+  <!-- Organs -->
+  <div class="hideme centered absolute" style="top: 85%; left: 50%;" >
+    <h1 class="margin_bottom_one_percent">Organs</h1>
+    <p class="italic">orgonome</p>
+  </div>
+
+  <!-- Person -->
+  <div class="hideme centered absolute" style="top: 93%; left: 42%;" >
+    <h1 class="margin_bottom_one_percent">Person</h1>
+    <p class="italic">morphome</p>
+  </div>
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                $(this).animate({'opacity':'1'},1000);
+            }
+          });
+        });
+      });
+</script>

@@ -1,0 +1,13 @@
+  <div id="admin_authors">
+
+    <%= form_for(@news_articles, :url => news_articles_path(@news_articles), :method => 'delete') do |f| %>
+      <p>Are you sure you want to get rid of this article?</p>
+
+      <p class="italic"><%= f.object.title %></p>
+
+      <div class="form_buttons">
+        <%= f.submit("yes, delete it", :class => "blue_btn shadow margin_top_one block centered", :style => "color: #fff; border: none; cursor: pointer; font-size: 1.2em;") %>
+      </div>
+
+      <% end %>
+    </div>

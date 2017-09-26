@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- This pulls in the html meta info, scripts, the CSS. -->
+    <%= render(:partial => 'main/head_contents') %>
+
+    <title>Stewart C. Wang, M.D., Ph.D. | Revolutionizing safety and quality of life through research and education</title>
+  </head>
+  <body>
+    <!-- This pulls in the fixed top bar, the site nav, and the search. -->
+    <%= render(:partial => 'main/header') %>
+
+    <!-- This is the white part of the page where all the content will be. -->
+    <div id="page" class="gray_background shadow eighty">
+      <div class="wrapper inline_block">
+        <section class="slide">
+
+              <ul class="rslides" id="slides0">
+                   <li>
+                     <%= image_tag("morphomics_index/slide_pharmaceuticals.jpg", :class => "full")%>
+                       <img src="images/morphomics_index/slide_pharmaceuticals.jpg" alt="">
+                           <div class='boxThing'>
+                               <h2>Medical Research</h2>
+                               <p>Analytic Morphomics identifies bio-markers using medical imaging that provides insight into disease processes, treatment options, and outcome variability.</p>
+                           </div>
+
+                   </li>
+                   <li>
+                       <img src="images/morphomics_index/slide_car.jpg" alt="">
+                       <div class='boxThing'>
+                           <h2>Auto Safety</h2>
+                           <p>Analytic Morphomics improves automotive engineers&#39; understanding of the variability of a population in order to better protect individuals in motor vehicle crashes.</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="images/morphomics_index/slide_recovery.jpg" alt="">
+                       <div class='boxThing recovery'>
+                           <h2>Improving Surgical Outcomes</h2>
+                           <p>Analytic Morphomics helps doctors educate patients using their own specific bio-markers, engaging patients the shared decision making and motivating them to adopt healthier lifestyles.</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="images/morphomics_index/slide_femur.jpg" alt="">
+                       <div class='boxThing'>
+                           <h2>Devices</h2>
+                           <p>Analytic Morphomics characterizes the variation in a population, thereby enabling the design of devices that provide optimal benefit to individuals across the spectrum.</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="images/morphomics_index/slide_treatment.jpg" alt="">
+                       <div class='boxThing'>
+                           <h2>Drug Treatment</h2>
+                           <p>Analytic Morphomics enables more precise evaluation of a patient for drug dosing and measurement of treatment effectiveness.</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="images/morphomics_index/slide_risk_analysis.jpg" alt="">
+                       <div class='boxThing'>
+                           <h2>Risk Analysis</h2>
+                           <p>Analytic Morphomics enables more precise evaluation of patient risk at baseline and following surgical or medical treatment. Using morphomic variables, far more accurate prediction of individual outcomes and costs is possible.</p>
+                       </div>
+                   </li>
+              </ul>
+           </section>
+
+    </div>
+    </div>
+    <%= render(:partial => 'main/bottom') %>
+
+  </body>
+  <script>
+      $(document).ready(function () {
+          $("#slides0").responsiveSlides({
+              auto: true,             // Boolean: Animate automatically, true or false
+              speed: 1200,            // Integer: Speed of the transition, in milliseconds
+              timeout: 5000,          // Integer: Time between slide transitions, in milliseconds
+              pager: false,           // Boolean: Show pager, true or false
+              nav: true,             // Boolean: Show navigation, true or false
+              random: false,          // Boolean: Randomize the order of the slides, true or false
+              pause: false,           // Boolean: Pause on hover, true or false
+              pauseControls: true,
+              prevText: "",   // String: Text for the "previous" button
+              nextText: "",         // Boolean: Pause when hovering controls, true or false
+              //before: function(){},   // Function: Before callback
+              //after: function(){}     // Function: After callback
+
+        });
+
+      });
+
+  </script>
+
+</html>

@@ -1,0 +1,14 @@
+<div class="tooltip"> <!-- This div contains instructions that show up when a user hovers over the question mark. Otherwise, it's hidden. -->
+    <%= image_tag("question_mark.png", :alt => "help", :class => "inline_block", :id => "info") %>
+    <span class="tooltiptext data_dictionary_instructions shadow_darker">
+      <div class="centered">
+        <ul class="orange_bullets text_left padding_bottom_one" style="font-size: .6em; width: 90%;">
+          <li class="orange_bullets"><p>Most measures are taken "per vertebra" at each vertebral level visible in the CT scan, allowing morphomics to be reported as a function of body region.</p></li>
+          <li class="orange_bullets"><p>A number of measures of muscle density are reported in Hounseld Units (HU), and often separated into Normal Density Muscle (NDM) and Low Density Muscle (LDM). The thresholds for these come from the paper <a class="underline bright_blue" href="https://www.ncbi.nlm.nih.gov/pubmed/10102702">Goodpaster BH, Kelley DE, Wing RR, Meier A, Thaete FL. Effects of weight loss on regional fat distribution and insulin sensitivity in obesity. Diabetes. 1999;48(4):839-47.</a></p></li>
+          <li class="orange_bullets"><p>The "lean psoas" is a mathematical combination of measures of psoas cross sectional area (mm<sup>2</sup>) and psoas density (in HU) inside the muscle boundary. The formula for lean psoas is then:</p></li>
+          <%= image_tag("data_dictionary_equation.png", :class => "block", :style => "margin: 1em auto") %>
+          <li class="orange_bullets"><p>This can be thought of as "normalizing a muscle's density between -85 HU (very fatty and low density) and +85 HU (very dense)". The values of ±85 were chosen by inspection of some of our sickest and healthiest individuals' data points.</p></li>
+        </ul>
+      </div>
+    </span>
+  </div>

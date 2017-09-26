@@ -1,0 +1,105 @@
+
+<!-- This is the white part of the page where all the content will be. -->
+<div id="page" class="shadow">
+
+    <!-- This is the big greeting background image-->
+    <section class="slide shadow" style="height: 681px;">
+      <ul class="rslides" id="slides0">
+
+
+        <li>
+          <%= image_tag("slides/precision_medicine_morphomics.jpg") %>
+            <div class='box_desktop box_mobile white_transluscent_background shadow rounded_corners padding_one'>
+                <h2>Precision & Personalized Medicine</h2>
+                <p>Analytic Morphomics identifies bio-markers using medical imaging that provides insight into disease processes, treatment options, and outcome variability.</p>
+                <a class="blue_btn shadow" href="morphomics">Learn more</a>
+            </div>
+        </li>
+
+        <li>
+          <%= image_tag("slides/reference_analytic_morphomics_population.jpg") %>
+          <div class='box_desktop box_mobile white_transluscent_background shadow rounded_corners padding_one'>
+            <h2>Reference Analytic Morphomics Population</h2>
+            <p>By using our Analytic Morphomics data, you can compare your patient’s inner measurements to that of a control population.</p>
+            <a class="blue_btn shadow" href="ramp">Learn more</a>
+          </div>
+        </li>
+        <li>
+          <%= image_tag("slides/health_center_gradient.jpg") %>
+          <div class='box_desktop box_mobile white_transluscent_background shadow rounded_corners padding_one'>
+            <h2>Education</h2>
+            <p>Cross-fertilization between multiple scientific and professional disciplines continue to be the engine of technological innovation and advancement.</p>
+            <a class="blue_btn shadow" href="icam/education">Learn more</a>
+          </div>
+        </li>
+        <li>
+          <%= image_tag("slides/international_center_for_automotive_medicine.jpg") %>
+          <div class='box_desktop box_mobile white_transluscent_background shadow rounded_corners padding_one'>
+            <h2>International Center for Automotive Medicine</h2>
+            <p>Our mission is to foster synergistic research between medical specialties, and biomedical and automotive engineering—efforts that translate quickly into new technologies, medical treatments, education, and policies that prevent injuries and improve care.</p>
+            <a class="blue_btn shadow" href="icam">Learn more</a>
+
+          </div>
+        </li>
+        <li>
+          <%= image_tag("slides/michigan_surgical_and_health_optimization_program.jpg") %>
+          <div class='box_desktop box_mobile white_transluscent_background shadow rounded_corners padding_one'>
+              <h2>Michigan Surgical & Health Optimization Program</h2>
+              <p>Helping patients prepare for surgery by understanding their risks and engaging them in an intervention program. </p>
+              <a class="blue_btn shadow" href="mshop">Learn more</a>
+
+          </div>
+        </li>
+        <li>
+          <%= image_tag("slides/vulnerable_road_users_injury_prevention.jpg") %>
+          <div class='box_desktop box_mobile white_transluscent_background shadow rounded_corners padding_one'>
+              <h2>Vulnerable Road Users Injury Prevention</h2>
+              <p>In 2008, the United Nations added Global Technical Regulation #9 - Pedestrian Safety to the Global Registry. This regulation seeks to better protect the thousands of pedestrians and cyclists that are injured by motor vehicles each year across the globe.</p>
+              <a class="blue_btn shadow" href="icam/pedestrian_consortium">Learn more</a>
+
+          </div>
+        </li>
+        <li>
+          <%= image_tag("slides/state_burn_coordinating_center.jpg") %>
+          <div class='box_desktop box_mobile white_transluscent_background shadow rounded_corners padding_one'>
+              <h2>State Burn Coordinating Center</h2>
+              <p>The State of Michigan Burn Coordinating Center has developed these modules to provide just-in-time training for pre-hospital and medical personnel caring for burn patients following a mass casualty event. This content is intended to support all levels of care for these patients as the triage and coordination of transfer is addressed.</p>
+              <a class="blue_btn shadow" href="http://michiganburn.org/index.shtml">Learn more</a>
+
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+      <div class="wrapper eighty">
+        <div class="multidiv left sixty margin_right_two_percent">
+          <h2 class="padding_bottom_half">In the Media</h2>
+          <% @news_article.each do |news_article| %>
+            <a href="<%= news_article.source %>">
+              <div class="shadow shadow_change margin_lr_none margin_bottom_one padding_one <%= cycle('white_background', 'gray_background') %>">
+              <%= image_tag news_article.image.url(:medium), :style => "max-width: 250px;", :class => "inline_block full" %>
+              <div class="relative fifty vertical_align inline_block padding_left_one_percent">
+                <h6 class="italic bold inline blue"><%= news_article.title %></h6>
+                <p class="padding_top_half"><%= truncate(simple_format(news_article.content, :class => "italic bold inline"), escape: false, length: 180,) %> </p>
+              </div>
+            </div>
+          </a>
+            <% end %>
+
+        </div>
+        <div class="multidiv thirty_seven inline_block ">
+          <h2 class="dotty padding_bottom_half">Newest Publications</h2>
+            <% @publications.take(3).each do |publication| %>
+              <a href="<%= publication.source %>">
+                <div class="inline_block padding_left_half dotty padding_top_one padding_bottom_one">
+                  <p class="gray"><%= publication.month_published%> <%=publication.year_published %></p>
+                  <h6 class="italic"><%= publication.name %></h6>
+                  <p><%= publication.authors.pluck(:name).join(", ") %></p>
+                </div>
+              </a>
+            <% end %>
+            <a class="btn blue_btn forty block centered shadow margin_top_one margin_bottom_two" style="width: 200px;" href="publications">see all publications</a>
+        </div>
+      </div> <!-- end of 80% page width wrapper -->
+    </div>

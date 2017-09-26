@@ -1,0 +1,21 @@
+
+        <div id="admin_journals">
+          <div class="margin_top_bottom_one center">
+            <h2>Journals in our database</h2>
+          </div>
+          <div class="block">
+            <%= link_to("Add Journal", new_journal_path, :class => 'blue_btn shadow new centered') %>
+          </div>
+          <div class="shadow">
+            <% @journals.each do |journal| %>
+            <div class="ninety_five padding_half text_left <%= cycle('white_background', 'gray_background') %>">
+              <div class="inline_block seventy margin_none">
+                <p class="italic bold inline gray margin_none"><%= journal.name %></p>
+              </div>
+              <div class="float_right fifteen min_125">
+                <%= link_to("delete", delete_journal_path(journal), :class => 'action delete inline float_right') %>
+                <%= link_to("edit", edit_journal_path(journal), :class => 'action edit inline float_right margin_right_one') %>
+              </div>
+            </div>
+            <% end %>
+        </div>

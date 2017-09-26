@@ -1,0 +1,63 @@
+<div class="padding_half">
+  <div id="form">
+
+    <!-- First Name block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">First Name:</h4>
+      </div>
+      <%= f.text_field(:first_name, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Last Name block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Last Name:</h4>
+      </div>
+      <%= f.text_field(:last_name, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Degree block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Degree</h4>
+      </div>
+      <%= f.text_field(:degree, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Title block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Title</h4>
+      </div>
+      <%= f.text_field(:title, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- Headshot block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Headshot</h4>
+      </div>
+      <%= f.file_field :image, as: :file %>
+    </div>
+
+    <!-- bio block -->
+    <div class="padding_one padding_lr_none">
+    <div class="ten inline_block vertical_align">
+      <h4 class="inline">Bio</h4>
+    </div>
+    <%= f.text_area(:bio, :class => "text_field padding_half eighty text_left relative", :style => "height: 300px; overflow: scroll; font-size: 1em;") %>
+    <br class="padding_half">
+  </div>
+
+  <!-- Team member type block -->
+  <div class="padding_one padding_lr_none">
+    <div class="ten inline_block">
+      <h4 class="inline">Which Team?</h4>
+    </div>
+    <%= f.select :team_member_type, ['faculty', 'staff', 'icam_advisory_council'] %>
+  </div>
+
+  </div>
+
+</div>

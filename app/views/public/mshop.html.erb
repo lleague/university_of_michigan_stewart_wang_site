@@ -1,0 +1,90 @@
+<div id="page" class="shadow">
+
+<div class="background_mshop shadow" style="min-height: 650px">
+
+<div class="block seventy centered" style="padding-top: 380px;">
+  <h1 class="white">MSHOP</h1>
+  <h5 class="white margin_bottom_half">Michigan Surgical & Health Optimization Program</h5>
+  <p class="white italic bold margin_bottom_two">While not yet a universally embraced concept, prehabilitation activities aim to strengthen and enhance a patient's ability to endure surgery, while also assisting in recovery, thereby lessening length of hospital stay and ultimately reducing costs. </p>
+  <a href="http://www.med.umich.edu/surgery/mshop/" class="blue_btn">get involved</a>
+</div>
+</div>
+<div class="background_nodes shadow" style="min-height: 650px">
+  <div class="block seventy centered">
+    <h2 class="white padding_top_two">Which patient will weather surgery better?</h2>
+    <p class="white italic bold margin_bottom_two">(choose one)</p>
+    <div class="block centered">
+      <div class="inline_block thirty_five padding_right_one_percent">
+        <%= image_tag("patient_a.png", :class => "option grow full", :id => "incorrect") %>
+        <p class="white bold italic centered">patient a</p>
+      </div>
+      <div class="inline_block thirty_five padding_right_one_percent">
+        <%= image_tag("patient_b.png", :class => "option grow full", :id => "correct") %>
+        <p class="white bold italic centered">patient b</p>
+      </div>
+    </div>
+    <div class="white_background seventy shadow rounded_corners padding_one margin_top_two answer incorrect">
+      <h5 class="bold padding_bottom_one red_text">No, the patient on the right will have a better outcome.</h5>
+      <p class="italic">The patient on the right has a higher Body Mass Index but has larger and higher quality core muscles. The patient on the left, while thinner, is lacking muscle and thus physical reserve to withstand the insult of surgery.</p>
+    </div>
+    <div class="white_background seventy shadow rounded_corners padding_one margin_top_two answer correct">
+      <h5 class="bold padding_bottom_one green_text">Correct! The patient on the right will have a better outcome.</h5>
+      <p class="italic">The patient on the right has a higher Body Mass Index but has larger and higher quality core muscles. The patient on the left, while thinner, is lacking muscle and thus physical reserve to withstand the insult of surgery.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="block eighty centered">
+  <%= image_tag("scan_layers.png", :class => "inline_block thirty_five padding_bottom_one", :style => "margin-top: 2em; margin-right: 1em;") %>
+  <div class="inline_block text_left fifty" style="margin: 3em auto;">
+    <h2 class="margin_top_two">MSHOP & Morphomic Analysis</h2>
+    <div class="block text_left" style="margin: 2em auto">
+      <p class="italic padding_half" style="padding-left: 0;">By using CT scans to take quantitative measurements of the human body, researchers are able to better predict surgical outcomes. The ultimate goal of this research is to compare these measurements to how well patients perform while undergoing different procedures.</p>
+      <p class="italic padding_half margin_bottom_two" style="padding-left: 0;">While the MSHOP program is focused on delivering a prehabilitation program augmented by cutting-edge technology, under the demonstration grant, Morphomics Analysis will be piloted in the Risk Assessment Tool on a limited set of patients.</p>
+      <a href="http://www.med.umich.edu/surgery/mshop/" class="blue_btn">get involved</a>
+    </div>
+  </div>
+</div>
+
+<hr class="dotty">
+
+<div class="block eighty centered">
+  <div class="inline_block text_left fifty" style="margin: 3em auto;">
+    <h2 class="margin_top_two">How we train patients for surgery</h2>
+    <div class="block text_left" style="margin: 2em auto">
+      <p class="italic padding_half" style="padding-left: 0;">MSHOP was developed at the University of Michigan to help patients prepare for surgery by understanding their risks through Morphomic Analysis and engaging them in an intervention program.</p>
+      <p class="italic padding_half" style="padding-left: 0;">We prepare them for surgery by focusing on four areas of improvement: Movement, Eating, Breathing, and Relaxation.</p>
+      <p class="italic padding_half margin_bottom_two" style="padding-left: 0;">This increases the liklihood that the patient will do better after surgery, improving their quality of life. </p>
+      <a href="http://www.med.umich.edu/surgery/mshop/" class="blue_btn">get involved</a>
+    </div>
+  </div>
+  <%= image_tag("move_eat_breathe_relax.png", :class => "inline_block thirty_five padding_bottom_one", :style => "margin-top: 2em; margin-left: 1em;") %>
+</div>
+<hr class="dotty">
+
+<div class="block eighty centered">
+  <%= image_tag("mshop_financial_results.png", :class => "inline_block fifty_five padding_bottom_one", :style => "margin-top: 3em; margin-right: 1em;") %>
+  <div class="inline_block text_left forty">
+    <h2 class="margin_top_two">Does it work?</h2>
+    <div class="block text_left" style="margin: 2em auto">
+      <p class="italic padding_half margin_bottom_two" style="padding-left: 0;">After a successful MSHOP pilot at the University of Michigan Health System, outcomes analysis indicated that there were reductions in both costs and lengths of stay in the MSHOP group versus the control group.</p>
+      <a href="http://www.med.umich.edu/surgery/mshop/" class="blue_btn">get involved</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+
+//hide all by default
+$('.answer').hide(); // hides both inputs by default
+
+$('.option').click(function(){ // but if the user clicks one of the calculator mode buttons...
+  let element = event.currentTarget;
+  var input_id = element.id;
+  $('.answer').hide(); // hides both input buttons
+  $('.answer.'+ input_id).fadeIn(); // shows the input buttn that corresponds to the button
+});
+</script>

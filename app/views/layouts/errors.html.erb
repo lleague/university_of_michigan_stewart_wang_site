@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- This pulls in the html meta info, scripts, the CSS. -->
+    <%= stylesheet_link_tag('public', :media => 'all') %>
+    <%= render(:partial => 'public/head_contents') %>
+    <title>Stewart C. Wang, M.D., Ph.D. | Revolutionizing safety and quality of life through research and education</title>
+  </head>
+  <body>
+    <!-- This pulls in the fixed top bar, the site nav, and the search. -->
+    <%= render(:partial => 'public/header') %>
+
+    <!-- This is the white part of the page where all the content will be. -->
+    <div id="page" class="shadow">
+    <%= image_tag("404_gears_without_text.png", :alt => "error", :class => "full") %>
+
+      <div class="center white full absolute" >
+        <h1 class="white padding_bottom_one">Oops, looks like something broke!</h1>
+        <p>Please head back to our <a class="white underline" href="main/index">Home Page.</a></p>
+      </div>
+    <%= render(:partial => 'public/bottom') %>
+  </div>
+
+</body>
+</html>

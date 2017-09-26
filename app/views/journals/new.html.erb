@@ -1,0 +1,13 @@
+<div id="admin_journals">
+  <h2>Add a journal</h2>
+
+  <%= simple_form_for(@journals) do |f| %>
+
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+  <div class="form_buttons">
+    <%= f.submit("save", :class => "blue_btn shadow margin_top_one block centered", :style => "color: #fff; border: none; cursor: pointer; font-size: 1.2em;") %>
+  </div>
+
+  <% end %>
+</div>

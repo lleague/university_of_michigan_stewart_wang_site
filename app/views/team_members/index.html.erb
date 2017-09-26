@@ -1,0 +1,20 @@
+<div id="admin_publications">
+  <div class="margin_top_bottom_one center">
+    <h2>Team Members</h2>
+  </div>
+  <div class="block">
+    <%= link_to("Add New Team Member", new_team_member_path, :class => 'blue_btn shadow new centered') %>
+  </div>
+  <div class="shadow">
+    <% @team_members.each do |team_member| %>
+    <div class="ninety_five padding_half text_left <%= cycle('white_background', 'gray_background') %>">
+      <div class="seventy inline">
+        <p class="inline gray margin_none"><span class="bold"><%= team_member.last_name %>, <%= team_member.first_name %></span> <span class="italic">- <%= team_member.team_member_type %></span></p>
+      </div>
+      <div class="float_right forty">
+        <%= link_to("delete", delete_team_member_path(team_member), :class => 'action delete inline float_right') %>
+        <%= link_to("edit", edit_team_member_path(team_member), :class => 'action edit inline float_right margin_right_one') %>
+      </div>
+    </div>
+    <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div id="login">
+  <p class="gray italic">Please log in to make changes to this site.<p>
+  <p>&nbsp;</p>
+  <%= form_tag(access_attempt_login_path, :method => :post) do %>
+      <p><%= text_field_tag(:username, params[:username], :placeholder => "username", :class => "text_field center") %></p>
+      <p><%= password_field_tag(:password, "", placeholder: "password", :class => "text_field center") %></p>
+      <p><%= submit_tag("Log In", :class => "btn shadow margin_top_one") %></p>
+  <% end %>
+</div>

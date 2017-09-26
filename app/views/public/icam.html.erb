@@ -1,0 +1,103 @@
+
+<%= render(:partial => 'icam_header') %>
+
+<!-- This is the white part of the page where all the content will be. -->
+<div id="page" class="shadow">
+
+  <!-- Header image and content -->
+  <div class="background_icam shadow" style="min-height: 740px">
+    <div id="icam_intro" class="inline_block forty text_left padding_left_three fade">
+      <h1 class="white bold padding_bottom_half">International Center<br> for Automotive<br> Medicine</h1>
+      <h5 class="italic bold white margin_bottom_two inline_block sixty">Fostering collaboration between medical disciplines and auto engineering to prevent injuries and improve care</h5>
+      <h3 class="white italic bold margin_bottom_half">QUICK LINKS</h3>
+      <a href="advisory_council" class="inline-block white italic bold underline">ICAM technical advisory council</a><br>
+      <a href="pedestrian_consortium" class="inline-block white italic bold underline">pedestrian consortium</a><br>
+      <a href="research#case_review" class="inline-block white italic bold underline">crash case review</a><br>
+      <a href="education#injury_fellowship" class="inline-block white italic bold underline">injury fellowship</a><br>
+      <a href="research#computational_biomechanics" class="inline-block white italic bold underline">humanetics</a><br>
+    </div>
+    </div>
+
+    <!-- Dynamic Case Review Date -->
+    <% @next_case_review.each do |next_case_review| %>
+      <div class="full centered padding_bottom_two" style="background-color: #0383FF;">
+        <h3 class="italic bold white padding_one">Next Case Review: <%= next_case_review.when %></h3>
+        <%= mail_to "caroknox@med.umich.edu", "attend", :style => "font-size: .9em", :class => "orange_btn shadow white bold" %>
+
+      </div>
+    <% end %>
+
+    <!-- ICAM blurbs - what we do and why -->
+    <div class="full shadow_darker padding_top_one centered">
+      <div class="forty blue_left inline_block margin_one text_left">
+        <p class="italic padding_left_one"><span class="bold">ICAM combines</span> the exceptional medical, engineering, and educational resources of the University of Michigan with the unmatched automotive technical and industrial resources of southeast Michigan.</p>
+      </div>
+      <div class="forty blue_left inline_block margin_one text_left">
+        <p class="italic padding_left_one"><span class="bold">The center's mission</span> is to foster synergistic research between medical specialties, and biomedical and automotive engineering—efforts that translate quickly into new technologies, medical treatments, education, and policies that prevent injuries and improve care.</p>
+      </div>
+    </div>
+
+    <div class="eighty margin_top_four padding_bottom_two">
+      <h3 class="bold">To Accomplish our Mission, we have a 3-part plan:</h3>
+
+      <!-- Research Section -->
+      <div class="full margin_top_three dotty_left padding_bottom_two">
+        <%= image_tag("number_1.png", :class => "inline_block", :style => "margin-left: -30px;") %>
+        <div class="inline_block forty margin_left_one">
+          <h3 class="bold padding_top_half">Research</h3>
+          <p class="italic bold padding_top_one">Our research team was one of the founding members of the Crash Injury Research Engineering Network (CIREN), a government-industry research consortium of NHTSA and we were involved with this project for 14 years.</p>
+          <p class="italic bold padding_top_one">We are committed to supporting the NIH Roadmap's integrated vision by generating opportunities in three main areas:</p>
+          <ol class="padding_left_two padding_top_one padding_bottom_two">
+            <li class="padding_half">New pathways to discovery</li>
+            <li class="padding_half">Research teams of the future</li>
+            <li class="padding_half">Re-engineering the research enterprise</li>
+          </ol>
+          <a href="research" class="blue_btn shadow">learn more</a>
+        </div>
+        <div id="icam_crash_img" class="inline_block fifty">
+          <%= image_tag("icam_crash.png", :class => "full", :style => "float: right;")%>
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="full dotty_left padding_bottom_two">
+        <%= image_tag("number_2.png", :class => "inline_block", :style => "margin-left: -30px;") %>
+        <div class="inline_block forty margin_left_one">
+          <h3 class="bold padding_top_half">Education</h3>
+          <p class="italic bold padding_top_one">Cross-fertilization between multiple scientific and professional disciplines continue to be the engine of technological innovation and advancement.</p>
+          <p class="italic bold padding_top_one">The sustained and growing enthusiasm we have seen over the past seven years for the University of Michigan Program for Injury Research and Education (UMPIRE) fellowship to train automotive engineers in anatomy, medical science, and injury care clearly demonstrates the potential for expanded cross-training of engineers in the medical sciences.</p>
+          <p class="italic bold padding_top_one margin_bottom_two">The education provided by the center is quickly available for new vehicle design by medically trained engineers, translating into safer vehicles.</p>
+          <a href="education" class="blue_btn shadow">learn more</a>
+        </div>
+        <div id="icam_education_img" class="inline_block fifty">
+          <%= image_tag("icam_education.png", :class => "eighty", :style => "float: right;")%>
+        </div>
+      </div>
+
+      <!-- Policy Section -->
+      <div class="full dotty_left padding_bottom_two">
+        <%= image_tag("number_3.png", :class => "inline_block", :style => "margin-left: -30px;") %>
+        <div class="inline_block forty margin_left_one">
+          <h3 class="bold padding_top_half">Policy</h3>
+          <p class="italic bold padding_top_one">Our ongoing federally-funded research projects provide us with direct access to the databases of several large national multi-center studies.</p>
+          <p class="italic bold padding_top_one margin_bottom_two"> This data access, coupled with the internationally-recognized expertise of its researchers, allows the center to drive policy-making at multiple levels.</p>
+          <a href="policy_making" class="blue_btn shadow">learn more</a>
+        </div>
+        <div id="icam_policy_img" class="inline_block fifty">
+          <%= image_tag("icam_policy.png", :class => "eighty", :style => "float: right;")%>
+        </div>
+      </div>
+    </div>
+
+      <!-- Victors for Michigan Section -->
+      <div class="full shadow_darker background_black_criss_cross" style="height: 300px;">
+        <div class="display block centered">
+          <h3 class="white italic padding_bottom_two padding_top_four eighty">Help us improve auto safety with Victors for Michigan</h3>
+          <a class="green_btn_darker shadow" href="https://leadersandbest.umich.edu/overview">support</a>
+      </div>
+      </div>
+
+
+
+
+</div>

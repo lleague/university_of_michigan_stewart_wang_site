@@ -1,0 +1,11 @@
+<div id="admin_authors">
+  <h2>Add an author</h2>
+
+  <%= simple_form_for(@authors) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+  <div class="form_buttons">
+    <%= f.submit("save", :class => "blue_btn shadow margin_top_one block centered", :style => "color: #fff; border: none; cursor: pointer; font-size: 1.2em;") %>
+  </div>
+  <% end %>
+</div>

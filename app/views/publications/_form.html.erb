@@ -1,0 +1,91 @@
+<div class="padding_half">
+  <div id="form">
+
+    <!-- title block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block">
+        <h4 class="inline">Title:</h4>
+      </div>
+      <%= f.text_field(:name, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- authors block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block vertical_align">
+        <h4 class="inline">Authors:</h4>
+      </div>
+      <div style="width: 80%; display: inline-block;">
+        <div style="height: 120px; overflow: scroll; border: 1px solid #ccc; border-radius: 8px; padding-left: 1em;">
+          <%= f.association(:authors, as: :check_boxes, item_wrapper_tag: :div, label: false, collection: Author.order('name ASC'), :class => "text_field padding_half eighty text_left") %>
+        </div>
+        <p class="padding_half">Can't find an author? Add a new one <%= link_to("here.", authors_path, :class => 'link') %></p>
+      </div>
+    </div>
+
+    <!-- journals block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block vertical_align">
+        <h4 class="inline">Journal:</h4>
+      </div>
+      <div style="width: 80%; display: inline-block;">
+        <%= f.association(:journals, label: false, :class => "text_field padding_half eighty text_left") %>
+        <p class="padding_half">Can't find a journal? Add a new one <%= link_to("here.", new_journal_path, :class => 'link') %></p>
+      </div>
+    </div>
+
+    <!-- year published block -->
+    <div class="padding_one padding_lr_none">
+  <div class="ten inline_block">
+      <h4 class="inline">Year:</h4>
+  </div>
+    <%= f.text_field(:year_published, :class => "text_field padding_half twenty text_left relative") %>
+    <br class="padding_half">
+  </div>
+
+    <!-- month published block -->
+    <div class="padding_one padding_lr_none">
+    <div class="ten inline_block">
+      <h4 class="inline">Month:</h4>
+    </div>
+    <%= f.text_field(:month_published, :class => "text_field padding_half twenty text_left relative") %>
+    <br class="padding_half">
+</div>
+
+    <!-- day published block -->
+    <div class="padding_one padding_lr_none">
+    <div class="ten inline_block">
+      <h4 class="inline">Day:</h4>
+    </div>
+    <%= f.text_field(:day_published, :class => "text_field padding_half twenty text_left relative") %>
+    <br class="padding_half">
+  </div>
+
+    <!-- citation block -->
+    <div class="padding_one padding_lr_none">
+    <div class="ten inline_block">
+      <h4 class="inline">Citation:</h4>
+    </div>
+    <%= f.text_field(:citation, :class => "text_field padding_half sixty text_left relative") %>
+    <br class="padding_half">
+</div>
+
+    <!-- source url block -->
+    <div class="padding_one padding_lr_none">
+    <div class="ten inline_block">
+      <h4 class="inline">Link:</h4>
+    </div>
+    <%= f.text_field(:source, :class => "text_field padding_half sixty text_left relative") %>
+    <br class="padding_half">
+</div>
+
+    <!-- abstract block -->
+    <div class="padding_one padding_lr_none">
+    <div class="ten inline_block vertical_align">
+      <h4 class="inline">Abstract:</h4>
+    </div>
+    <%= f.text_area(:abstract, :class => "text_field padding_half eighty text_left relative", :style => "height: 300px; overflow: scroll; font-size: 1em;") %>
+    <br class="padding_half">
+  </div>
+  </div>
+
+</div>

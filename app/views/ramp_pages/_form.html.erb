@@ -1,0 +1,88 @@
+<div class="padding_half">
+  <div id="form">
+
+    <!-- First Name block -->
+    <div class="padding_one padding_lr_none">
+      <div class="twenty inline_block">
+        <h4 class="inline">Name:</h4>
+      </div>
+      <%= f.text_field(:name, :class => "text_field padding_half seventy text_left relative") %>
+    </div>
+
+    <!-- vertebrae block -->
+    <div class="padding_one padding_lr_none">
+      <div class="twenty inline_block">
+        <h4 class="inline">Vertebrae Number</h4>
+      </div>
+      <%= f.select :vertebrae_number, ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 't1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 'l1', 'l2', 'l3', 'l4', 'l5', 's1', 's2', 's3', 's4', 's5'] %>
+    </div>
+    
+    <!-- Last Name block -->
+    <div class="padding_one padding_lr_none">
+      <div class="twenty inline_block">
+        <h4 class="inline">Definition</h4>
+      </div>
+      <%= f.text_field(:definition, :class => "text_field padding_half seventy text_left relative") %>
+    </div>
+
+    <!-- Headshot block -->
+    <div class="padding_one padding_lr_none">
+      <div class="twenty inline_block">
+        <h4 class="inline">Chart Image</h4>
+      </div>
+      <%= f.file_field :chart_img, as: :file %>
+    </div>
+
+    <!-- Headshot block -->
+    <div class="padding_one padding_lr_none">
+      <div class="twenty inline_block">
+        <h4 class="inline">Scan Image</h4>
+      </div>
+      <%= f.file_field :scan_img, as: :file %>
+    </div>
+
+    <!-- male ages block -->
+    <div class="padding_one padding_lr_none">
+    <div class="twenty inline_block vertical_align">
+      <h4 class="inline">Male Ages</h4>
+      <p class="gray italic">(paste the array in here)</p>
+    </div>
+    <%= f.text_area(:m_ages, :onclick => 'this.select();', :class => "text_field padding_half ten text_left relative") %>
+    <br class="padding_half">
+    </div>
+
+    <!-- male 2d array block -->
+    <div class="padding_one padding_lr_none">
+    <div class="twenty inline_block vertical_align">
+      <h4 class="inline">Male 2D Array</h4>
+      <p class="gray italic">(paste the array in here)</p>
+    </div>
+    <%= f.text_area(:m_valsArr2d, :onclick => 'this.select();', :class => "text_field padding_half ten text_left relative") %>
+    <br class="padding_half">
+  </div>
+
+  <!-- female ages block -->
+  <div class="padding_one padding_lr_none">
+  <div class="twenty inline_block vertical_align">
+    <h4 class="inline">Female Ages</h4>
+    <p class="gray italic">(paste the array in here)</p>
+  </div>
+  <%= f.text_area(:f_ages, :onclick => 'this.select();', :class => "text_field padding_half ten text_left relative") %>
+  <br class="padding_half">
+  </div>
+
+  <!-- female 2d array block -->
+  <div class="padding_one padding_lr_none">
+  <div class="twenty inline_block vertical_align">
+    <h4 class="inline">Female 2D Array</h4>
+    <p class="gray italic">(paste the array in here)</p>
+  </div>
+  <%= f.text_area(:f_valsArr2d, :onclick => 'this.select();', :class => "text_field padding_half ten text_left relative") %>
+  <br class="padding_half">
+</div>
+
+
+
+  </div>
+
+</div>

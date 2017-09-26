@@ -1,0 +1,218 @@
+
+    <!-- This is the white part of the page where all the content will be. -->
+    <div class="background_nodes">
+
+      <!-- Contains the content -->
+      <div class="overlay shadow ramp" style="margin-bottom: 10em;">
+
+        <div class="sixty inline_block no_margin padding_left_seven" id="left_container">
+
+
+            <h2 class="bold inline_block margin_top_two"><%= @ramp_page.name %> @ <span class="uppercase"><%= @ramp_page.vertebrae_number %></span></h2>
+            <hr class="gray_line">
+            <img class="inline_block thirty"src="<%= @ramp_page.scan_img %>">
+            <div class="forty_eight inline_block">
+              <div class="margin_one margin_top_none inline_block;">
+                <p class="padding_bottom_one italic"><%= @ramp_page.definition %></p>
+                <div class="tooltip">
+                  <a id="control_population_btn" class="green_btn shadow regular white tooltip small">See Control Population</a>
+                    <span class="tooltiptext chart_tooltip shadow_darker">
+                      <img class="full" src="<%= @ramp_page.chart_img %>">
+                    </span>
+                </div>
+              </div>
+            </div>
+
+
+      <div class="form inline_block">
+
+      <form id="frm1" class="shadow inline_block max_500 TB_margin_one rounded_corners" action="form_action.asp">
+          <h5 class="italic padding_one bold">Use this calculator to compare your patient to the control population</h5>
+       <hr class="dotty">
+
+
+
+
+        <div id="gender">
+          <p class="padding_bottom_half padding_top_one">1. What&#39;s your patient&#39;s gender?</p>
+            <input id="male" type="radio" name="gender" onclick="setGender(this.value)" value="M"/>
+            <label for="male" id="male"class="radio" style="font-weight: bold; text-align: center;">Male</label>
+
+            <input id="female" type="radio" name="gender" onclick="setGender(this.value)" value="F"/>
+            <label for="female" id="female" class="radio" style="font-weight: bold; text-align: center;">Female</label>
+        </div>
+        <hr class="dotty">
+        <div class="margin_bottom_one">
+          <p class="padding_bottom_half padding_top_one">2. How old is your patient?</p>
+            <input type="text" name="age"id="agein" placeholder="age" onfocus="this.placeholder = ''" onblur="this.placeholder ='age'">
+          </div>
+            <div id="specs" class="margin_bottom_one">
+
+              <hr class="dotty">
+
+          <!-- Buttons switching between percentile & measurement mode -->
+          <p class="padding_bottom_half padding_top_one">3. Choose a mode</p>
+          <div class="inline_block full TB_margin_one">
+            <a id="tauButton"class="calculator_btn inline_block thirty shadow shadow_change padding_half rounded_corners">
+              <%= image_tag("icon_percent_dark.png", :alt => "percentile", :class => "centered")%>
+              <p class="centered">percentile</p>
+            </a>
+            <h5 class="inline_block padding_one">OR</h5>
+            <a id="valButton"class="calculator_btn inline_block thirty shadow shadow_change padding_half rounded_corners">
+              <%= image_tag("icon_measurement_dark.png", :alt => "measurement", :class => "centered")%>
+              <p class="centered">measurement</p>
+            </a>
+          </div>
+          <hr class="dotty">
+
+          <!-- Inputs for precentile % measurement -->
+          <p class="padding_bottom_half padding_top_one">4. Enter a value</p>
+          <div class="mode_content percentile text_left padding_left_two" style="margin-bottom: .5em;">
+            <input type="text" id="tauin" class="input_field" placeholder="percentile" onfocus="this.placeholder = ''" onblur="this.placeholder ='enter percentile'"   >
+            <div class="input_btn tauButton inline_block">
+              <input id='tauButton' class="green_btn shadow" type="button" value="get measurement" onclick="getVal('tau')"><br>
+            </div>
+          </div>
+          <div class="mode_content value text_left padding_left_two">
+            <input type="text" id="valin" class="input_field" name="valin" placeholder="measurement" onfocus="this.placeholder = ''" onblur="this.placeholder ='enter value'" >
+            <div class="input_btn valButton inline_block">
+              <input id='valButton' class="green_btn shadow" type="button" value="get percentile" onclick="getVal('val')">
+            </div>
+          </div>
+          </div>
+          <hr class="dotty">
+
+          <!-- Reset button -->
+        <input class="btn shadow reset thirty margin_top_two" id="reset" type="button" value="reset">
+        <br><br>
+      </form>
+    </div>
+    </div>
+
+<script>
+
+//hide all by default
+$('.input_btn').hide(); // hides both inputs by default
+
+$('.calculator_btn').click(function(){ // but if the user clicks one of the calculator mode buttons...
+  let element = event.currentTarget;
+  var input_id = element.id;
+  $('.input_btn').fadeOut(); // hides both input buttons
+  $('.input_btn.'+ input_id).fadeIn(); // shows the input buttn that corresponds to the button
+});
+</script>
+
+<script>
+/* Define the lookups. These next 3 lines are all that's needed to be changed per chart */
+var valsArr2d = [[10,22,33],[44,50,60],[80,90,96],[90,94,99]];
+var taus = [25, 50, 75];
+var ages = [1,5,10,20];
+var gender = ""
+
+function getVal(byType) {
+// Function runs when user clicks the form
+
+// Fetch data from page
+reqAge = document.getElementById("agein").value;
+tau = document.getElementById("tauin").value;
+val = document.getElementById("valin").value;
+
+tauElement = document.getElementById("tauin");
+valElement = document.getElementById("valin");
+
+if (!gender){
+   return;
+}
+
+
+if (!(reqAge > 0 && reqAge < 100)) {
+   return;
+}
+
+
+
+// Pick the age index
+for (ageI = 0; ageI < ages.length-1; ageI++) {
+   if (ages[ageI] >= reqAge) { break; }
+}
+
+
+// This gives a set of vals per tau at that age
+vals = valsArr2d[ageI];
+
+
+// Set the lookup array and the key used to look it up
+
+if(byType == 'tau'){
+   if (!(tau > 0 && tau < 100)) {
+       return;
+   }
+
+   arrToLookup = taus;
+   arrToOutput = vals;
+
+   // Do the tau OR val lookup
+   for (lkupI = 0; lkupI < arrToLookup.length-1; lkupI++) {
+       if (arrToLookup[lkupI] >= tau) { break; }
+   }
+
+   outputValue = arrToOutput[lkupI];
+
+   // Update the form
+   valElement.value = outputValue;
+
+
+} else if (byType == 'val'){
+   if (!(val > 0 && val < 100)) {
+       return;
+   }
+
+   arrToLookup = vals;
+   arrToOutput = taus;
+
+   // Do the tau OR val lookup
+   for (lkupI = 0; lkupI < arrToLookup.length-1; lkupI++) {
+       if (arrToLookup[lkupI] >= val) { break; }
+   }
+
+   outputValue = arrToOutput[lkupI];
+
+   // Update the form
+   tauElement.value = outputValue;
+
+}
+}
+
+function setGender(MF) {
+
+switch (MF) {
+case "M":
+   gender = 'M';
+taus = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95];
+ages = <%= @ramp_page.m_ages %>;
+valsArr2d = <%= @ramp_page.m_valsArr2d %>;
+break;
+default: // females are default
+   gender = 'F';
+taus = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95];
+ages = <%= @ramp_page.f_ages %>;
+valsArr2d = <%= @ramp_page.f_valsArr2d %>;
+}
+}
+</script>
+
+
+  <script>
+  $(".reset").bind("click", function() {
+      $("input[type=text], textarea").val("");
+  });
+
+  $(".rampButton").bind("click", function() {
+   $(':input').removeAttr('placeholder');
+  });
+
+  $(".row").click(function() {
+    window.location = $(this).find("a").attr("href");
+    return false;
+  });
+</script>

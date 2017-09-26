@@ -1,0 +1,25 @@
+<div id="admin_publications">
+  <div class="margin_top_bottom_one center">
+    <h1>Current news articles:</h1>
+  </div>
+  <div class="block">
+    <%= link_to("Add New Article", new_news_article_path, :class => 'blue_btn shadow new centered') %>
+  </div>
+  <div class="shadow">
+    <% @news_articles.each do |news_article| %>
+      <div class="ninety_five padding_half <%= cycle('white_background', 'gray_background') %>">
+        <div class="vertical_align twenty inline_block">
+          <%= image_tag news_article.image.url(:medium), :style => "width: 100%;" %>
+        </div>
+          <div class="sixty inline_block padding_left_one">
+            <p class="gray bold"><%= news_article.title %> </p>
+            <p><%= truncate(simple_format(news_article.content), escape: false, length: 180, :class => "gray italic") %> </p>
+          </div>
+        <div class="float_right fifteen">
+          <%= link_to("delete", delete_news_article_path(news_article), :class => 'action delete inline float_right') %>
+          <%= link_to("edit", edit_news_article_path(news_article), :class => 'action edit inline float_right') %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

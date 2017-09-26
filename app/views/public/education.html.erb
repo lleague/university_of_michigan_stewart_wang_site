@@ -1,0 +1,119 @@
+<%= render(:partial => 'icam_header') %>
+    <div id="page" class="gray_background shadow eighty">
+      <div class="wrapper padding_top_seven inline_block">
+        <div class="sixty inline_block no_margin padding_left_seven margin_bottom_two" id="left_container">
+            <h1 class="bold inline_block">ICAM Education</h1>
+            <hr class="gray_line">
+            <h3 class="padding_bottom_one">Offering a cross-disciplinary education second to none</h3>
+              <p class="padding_bottom_one">Cross-fertilization between multiple scientific and professional disciplines continue to be the engine of technological innovation and advancement. The sustained and growing enthusiasm we have seen over the past seven years for the University of Michigan Program for Injury Research and Education (UMPIRE) fellowship to train automotive engineers in anatomy, medical science, and injury care clearly demonstrates the potential for expanded cross-training of engineers in the medical sciences. The education provided by the center is quickly available for new vehicle design by medically trained engineers, translating into safer vehicles.</p>
+            <div id="body_1">
+              <div id ="crash_response_training">
+              <h3 class="padding_top_two">Crash Response Training</h3>
+              <hr class="dotty">
+              <%= image_tag("icam_education/crash.png", :alt => "Motor Vehicle Crash", :class => "fifty max_450")%>
+
+              <div class="float_none forty_eight inline_block">
+                <div class="margin_one margin_top_none margin_top_none">
+                  <p class="padding_bottom_one">Our development of a Congressional funded EMS training program for advanced automatic crash notification (AACN) demonstrates the wide-based public support for cross-disciplinary education. Furthermore, tremendous advances in educational technologies and multimedia enable widespread dissemination for maximal educational impact. Our <a href="#">crashedu.org</a> website is just one example of the power of this cross-disciplinary education in the understanding of automotive medicine.</p>
+                </div>
+              </div>
+              <a class="blue_btn shadow" href="http://crashedu.org">Crash Training</a>
+            </div>
+            </div>
+          <div id="body_2">
+            <div id="injury_fellowship">
+            <h3 class="padding_top_two">ICAM Injury Fellowship</h3>
+            <hr class="dotty">
+            <%= image_tag("icam_education/fellowship.png", :alt => "ICAM Injury Fellowship", :class => "fifty max_450 inline_block")%>
+            <div id="icam_injury_fellowship" class="float_none forty_five inline_block padding_left_one">
+              <p class="padding_bottom_one margin_bottom_one">Our mission is to foster synergistic research between medical specialties, and biomedical and automotive engineering efforts that translate quickly into new technologies, medical treatments, education, and policies that prevent injuries and improve care.</p>
+              <p class="padding_bottom_one margin_bottom_one">When designing and manufacturing automobiles, lead-time is essential. ICAM has found that the best way to have medical and engineering specialists learn from each other and work together is to analyze current field data in a fellowship program.</p>
+              <p class="padding_bottom_one margin_bottom_one">ICAM offers fellowships to senior safety engineers and designers that have an interest collaboration and continuous education. Fellows are instructed in the basics of trauma, orthopedics, neurosurgery, and radiology as it relates to designing systems to prevent motor vehicle crash injury. Injury fellows will also gain practical experience in crash investigation and bioengineering. Additionally, ICAM invites research and industry experts to attend the crash injury case reviews as well as hold private seminars with the fellows on topics ranging from finite element analysis modeling to lower extremity injuries.</p>
+              <p class="padding_bottom_one margin_bottom_one">The Injury Fellowship is for 12 months, beginning in January. There are several levels of sponsorships for companies, dependent upon the number of fellows enrolled per organization.</p>
+              <p class="padding_bottom_one margin_bottom_one">Fellowship teams participate in a research analysis project which will ideally address an existing opportunity for improvement. These projects are conceived by the fellows, and will be presented to the sponsoring organization at a scheduled on-site visit.</p>
+              <p class="padding_bottom_one margin_bottom_one">Previous fellows have developed significant and innovative intellectual property. Let the ICAM team with their expertise in research and analysis be a partner in developing cutting edge safety and injury prevention engineering solutions.</p>
+            <div class="full shadow padding_top_one padding_left_one">
+              <h4>Current Fellows:</h4>
+              <ul class="padding_left_two">
+                <li>Raju Dhoop</li>
+                <li>Jennifer Benson</li>
+                <li>Robert W. Smith</li>
+                <li>Jason Piotrowski</li>
+                <li>Kristen Ansel</li>
+                <li>Ke Dong</li>
+              </ul>
+            </div>
+          </div>
+            </div>
+            <div class="centered">
+              <h5 class="bold padding_top_three margin_bottom_two">Want to learn more about the ICAM Injury Fellowship?</h5>
+              <a class="blue_btn shadow white" href="mailto:automotivemedicine@umich.edu?Subject=ICAM_Injury_Fellowship">email us</a>
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+        </div> <!-- end of the main content container that hangs out on the left. -->
+        <div class="twenty inline_block no_margin right fixed_container white_background rounded_corners z_two padding_left_two">
+          <ul>
+            <a><li id="side_1"  onClick="$('html, body').animate({scrollTop: $('#body_1').offset().top-100}, 250);">Crash Response Training</li></a>
+            <a><li id="side_2"  onClick="$('html, body').animate({scrollTop: $('#body_2').offset().top-100}, 250);">ICAM Injury Fellowship</li></a>
+
+          </ul>
+        </div> <!-- end of 80% page width wrapper -->
+      </div>
+    </div>
+    </div>
+
+
+  <script>
+  //makes the jump-to section light up according to what section the user is looking at.
+      $(document).ready(function () {
+
+          //Chanage these to match your doc layout
+          var startchange = $("#left_container");
+          var side = ["side_1","side_2"];
+          var body = ["body_1","body_2"];
+
+
+              //$('html, body').animate({scrollTop: $("#body_5").offset().top}, 2000);
+
+
+          if (startchange.length) {
+                  $(document).scroll(function () {
+
+                  body.forEach(function(value,i) {
+                      lower = $('#' + body[i]).offset().top;
+
+                      if(i>=1){
+                          upper = $('#' + body[i-1]).offset().top;
+                      } else {
+                          upper = -1;
+                      }
+
+                      //alert($(this).scrollTop());
+                      //alert("Upper: "+upper+"  Lower: "+lower);
+
+
+                      if ( ($(this).scrollTop() > upper) && ($(this).scrollTop() < lower)){
+                        $('#' + side[i]).css({'color': '#0283FF'});
+                      } else {
+                          $('#' + side[i]).css({'color': '#444'});
+
+                      }
+
+                  });
+
+
+              });
+          }
+
+
+      });
+
+  </script>

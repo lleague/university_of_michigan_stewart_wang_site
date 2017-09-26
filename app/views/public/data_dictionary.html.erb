@@ -1,0 +1,290 @@
+
+
+    <!-- This is the white part of the page where all the content will be. -->
+    <div id="page" class="gray_background shadow eighty">
+      <div class="wrapper padding_top_seven inline_block">
+        <div class="sixty inline_block no_margin padding_left_four" id="left_container">
+            <h1 class="bold inline_block">Morphomics Data Dictionary<%= render(:partial => 'data_dictionary_instructions') %></h1>
+          <hr class="gray_line">
+          <p class="italic">Sven Holcombe, Binu Enchakalody, Peng Zhang, Stewart Wang</p>
+          <ul class="orange_bullets">
+            <li><p>By using our Analytic Morphomics data, you can compare your patient's inner measurements to that of a control population. This page describes some of the measurements you can compare your patients to.</p></li>
+          </ul>
+          <div id="body_1">
+            <h3 class="padding_top_two padding_bottom_one">Body Measures (central plane depths)</h3>
+            <%= image_tag("data_dictionary/body_measures_central_plane_depths.png", :alt => "central plane depths", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Fascia to Skin (mm)</strong></p>
+                <p class="italic">Linear distance from fascia to skin (central sub-cutaneous size)</p>
+              </div>
+              <div class="margin_one margin_top_none">
+                <p><strong>Vertebral Body to Fascia (mm)</strong></p>
+                <p class="italic">Front of vertebral body to fascia (central visceral size)</p>
+              </div>
+              <div class="margin_one margin_top_none">
+                <p><strong>Spine to Back Skin (mm)</strong></p>
+                <p class="italic">Posterior tip of spine to back skin</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_2">
+            <h3 class="padding_top_two padding_bottom_one">Body Measures (shapes & sizes)</h3>
+            <%= image_tag("data_dictionary/body_measures_shapes_and_sizes.png", :alt => "shapes & sizes", :class => "fifty max_500")%>
+            <div class=" float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>Total Body Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Cross-sectional area of the body (inside purple line)</p>
+              </div>
+              <div class="margin_one margin_top_none">
+                <p><strong>Fascia Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Cross-sectional area of fascia (inside yellow line)</p>
+              </div>
+              <div class="margin_one margin_top_none">
+                <p><strong>Body Depth (mm)</strong></p>
+                <p class="italic">Front-to-back body distance (aligned to body habitus)</p>
+              </div>
+              <div class="margin_one margin_top_none">
+                <p><strong>Body Width (mm)</strong></p>
+                <p class="italic">Left-to-right body distance (aligned to body habitus)</p>
+              </div>
+              <div class="margin_one margin_top_none">
+                <p><strong>Fascia Eccentricity (ratio)</strong></p>
+                <p class="italic">Eccentricity of an ellipse having the same second-moments of the fascia region. (Ratio of major-axis length to the distance between ellipse foci). A circle has eccentricity of 0, while a line has eccentricity of 1.</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_3">
+            <h3 class="padding_top_two padding_bottom_one">Fat Measures</h3>
+            <%= image_tag("data_dictionary/fat_measures.png", :alt => "Fat measures", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>Visceral Fat Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Area inside the fascia (yellow line) meeting fat density thresholds (-205 to 51 HU)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Subcutaneous Fat Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Area between skin and fascia meeting fat density thresholds (-205 to -51 HU)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Subcutaneous Fat (HU)</strong></p>
+                <p class="italic">Median pixel intensity of fat-intensity pixels (-205 to -51 HU) in the subcutaneous region. Not computed when fewer than 200 pixels of fat exist.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Visceral Fat (HU)</strong></p>
+                <p class="italic">Median pixel intensity of fat-intensity pixels (-205 to -51 HU) inside the visceral cavity. Not computed when fewer than 200 pixels of fat exist.</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_4">
+            <h3 class="padding_top_two padding_bottom_one">Muscle (psoas)</h3>
+            <%= image_tag("data_dictionary/muscle_psoas.png", :alt => "Muscle (psoas)", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>Total Psoas Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Total area of the left/right psoas at L4 (region inside blue lines)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Psoas (HU)</strong></p>
+                <p class="italic">Average pixel intensity inside blue lines</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Weighted Lean Psoas (HU x mm<sup>2</sup>)</strong></p>
+                <p class="italic">Psoas HU normalized between -85 and +85, multiplied by Total Psoas Area.</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_5">
+            <h3 class="padding_top_two padding_bottom_one">Muscle (dorsal muscle group)</h3>
+            <%= image_tag("data_dictionary/muscle_dorsal_muscle_group.png", :alt => "Dorsal muscle Group", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>DMG Volume Within VB (mm<sup>3</sup>)</strong></p>
+                <p class="italic">Volume of the dorsal muscle group between this vertebra and its superior neighbor</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Boundary Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Cross sectional area of the DMG perimeter boundary. Boundary is built from triangle between spinal canal and left/right lateral seams, connected by nearest location to the posterior fascial envelope irrespective of bone/muscle/air contents.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Low Density Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Cross sectional area of the DMG falling in a low density muscle HU range (0 to 30)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Normal Density Area (mm<sup>2</sup>)</strong></p>
+                <p class="italic">Cross sectional area of the DMG falling in a normal density muscle HU range (31 to 100)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Mean (HU)</strong></p>
+                <p class="italic">Mean pixel intensity within the DMG boundary.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Median (HU)</strong></p>
+                <p class="italic">Median pixel intensity within the DMG boundary.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Low Density Mean (HU)</strong></p>
+                <p class="italic">Mean pixel intensity within Low Density Muscle (0 to 30) pixels inside the DMG boundary.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Low Density Median (HU)</strong></p>
+                <p class="italic">Median pixel intensity within Low Density Muscle (0 to 30) pixels inside the DMG boundary.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Normal Density Mean (HU)</strong></p>
+                <p class="italic">Mean pixel intensity within Normal Density Muscle (31 to 100) pixels inside the DMG boundary.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>DMG Normal Density Median (HU)</strong></p>
+                <p class="italic">Median pixel intensity within Normal Density Muscle (31 to 100) pixels inside the DMG boundary.</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_6">
+            <h3 class="padding_top_two padding_bottom_one">Pelvis (sizes)</h3>
+            <%= image_tag("data_dictionary/pelvis_sizes.png", :alt => "Pelvis (sizes)", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>Pelvis Distance (mm)</strong></p>
+                <p class="italic">Distance across full pelvis (shown in orange)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>ASIS Distance (mm)</strong></p>
+                <p class="italic">Distance across ASIS (where the seatbelt goes, shown blue)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Pubis to ASIS Distance (mm)</strong></p>
+                <p class="italic">Distance from pubis to ASIS (shown green)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Pubis to ASIS Angle (deg)</strong></p>
+                <p class="italic">Angle between two green arrows</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Pelvis Height (mm)</strong></p>
+                <p class="italic">Height of pelvis (vertical arrow, shown grey)</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_7">
+            <h3 class="padding_top_two padding_bottom_one">Spinal Measures (angles & sizes)</h3>
+            <%= image_tag("data_dictionary/spinal_measures_angles_sizes.png", :alt => "Spinal Measures (angles & sizes)", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>Vertebral Depth (mm)</strong></p>
+                <p class="italic">Distance from anterior vertebral body point to posterior vertebral body point.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Vertebral Height at the Spinal Canal (mm)</strong></p>
+                <p class="italic">Distance from inferior spinal canal point to superior spinal canal point.</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Vertebral Height at the Anterior of the Body (mm)</strong></p>
+                <p class="italic">Distance from inferior anterior vertebral body point to superior anterior body point (inclusive of disc)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Angle Y WRT INFVB (deg)</strong></p>
+                <p class="italic">Verteral angle (forward/backwards or flex/extension) with respect to the inferior vertebra (illustrated above)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Angle X WRT INFVB (deg)</strong></p>
+                <p class="italic">Verteral angle (side-to-side) with respect to the inferior vertebra (not shown above, will be zero for a laterally symmetric spine)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Angle Y WRT YZ (deg)</strong></p>
+                <p class="italic">Verteral "pose" (forward/backwards or flex/extension) with respect to the scanning table</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_8">
+            <h3 class="padding_top_two padding_bottom_one">Spinal Measures (cortical bone)</h3>
+            <%= image_tag("data_dictionary/spinal_measures_cortical_bone.png", :alt => "Spinal Measures (cortical bone)", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>Anterior Cortical Half-Maximum (HU)</strong></p>
+                <p class="italic">HU level at half-max of the bone signal peak</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Anterior Cortical Full-Width x Half-Maximum (HU*mm)</strong></p>
+                <p class="italic">The "Full-width-multiplied-by-half-max" of the avg. cortical bone signal (Newman - 1998, Prevrhal - 1999)</p>
+              </div>
+              <div class="margin_one margin_top_none margin_top_none">
+                <p><strong>Anterior Cortical Full-Width x Half-Maximum Standard Deviation (HU*mm)</strong></p>
+                <p class="italic">Std. Dev. from all 60 "Full-width-by-half-max" measurements (at 1° increments in the 60° wedge)</p>
+              </div>
+            </div>
+          </div>
+          <hr class="dotty">
+          <div id="body_9">
+            <h3 class="padding_top_two padding_bottom_one">Spinal Measures (trabecular bone)</h3>
+            <%= image_tag("data_dictionary/spinal_measures_trabecular_bone.png", :alt => "Spinal Measures (trabecular bone)", :class => "fifty max_500")%>
+            <div class="float_none forty_eight inline_block">
+              <div class="margin_one margin_top_none">
+                <p><strong>Bone Mineral Density VB Aligned (HU)</strong></p>
+                <p class="italic">Average pixel intensity (in CT Hounsfield Units) inside central bone core sample</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- end of the main content container that hangs out on the left. -->
+        <div class="twenty inline_block no_margin right fixed_container white_background rounded_corners z_two padding_left_two">
+          <ul id="sidenav">
+            <a><li id="side_1"  onClick="$('html, body').animate({scrollTop: $('#body_1').offset().top-100}, 250);">Body measures (central plane depths)</li></a>
+            <a><li id="side_2"  onClick="$('html, body').animate({scrollTop: $('#body_2').offset().top-100}, 250);">Body measures (shapes & sizes)</li></a>
+            <a><li id="side_3"  onClick="$('html, body').animate({scrollTop: $('#body_3').offset().top-100}, 250);">Fat Measures</li></a>
+            <a><li id="side_4"  onClick="$('html, body').animate({scrollTop: $('#body_4').offset().top-100}, 250);">Muscle (psoas)</li></a>
+            <a><li id="side_5"  onClick="$('html, body').animate({scrollTop: $('#body_5').offset().top-100}, 250);">Muscle (dorsal muscle group)</li></a>
+            <a><li id="side_6"  onClick="$('html, body').animate({scrollTop: $('#body_6').offset().top-100}, 250);">Pelvis (sizes)</li></a>
+            <a><li id="side_7"  onClick="$('html, body').animate({scrollTop: $('#body_7').offset().top-100}, 250);">Spine Measures (angles & sizes)</li></a>
+            <a><li id="side_8"  onClick="$('html, body').animate({scrollTop: $('#body_8').offset().top-100}, 250);">Spine Measures (cortical bone)</li></a>
+            <li><a>Spine Measures (trabecular bone)</a></li>
+          </ul>
+        </div> <!-- end of 80% page width wrapper -->
+      </div>
+    </div>
+
+  </body>
+  <script>
+  //makes the jump-to section light up according to what section the user is looking at.
+      $(document).ready(function () {
+
+          //Chanage these to match your doc layout
+          var startchange = $("#left_container");
+          var side = ["side_1","side_2","side_3","side_4", "side_5", "side_6", "side_7", "side_8", "side_9"];
+          var body = ["body_1","body_2","body_3","body_4", "body_5", "body_6", "body_7", "body_8", "body_9"];
+
+
+              //$('html, body').animate({scrollTop: $("#body_5").offset().top}, 2000);
+
+          if (startchange.length) {
+                  $(document).scroll(function () {
+                  body.forEach(function(value,i) {
+                      lower = $('#' + body[i]).offset().top;
+                      if(i>=1){
+                          upper = $('#' + body[i-1]).offset().top;
+                      } else {
+                          upper = -1;
+                      }
+                      //alert($(this).scrollTop());
+                      //alert("Upper: "+upper+"  Lower: "+lower);
+                      if ( ($(this).scrollTop() > upper) && ($(this).scrollTop() < lower)){
+                        $('#' + side[i]).css({'color': '#0283FF'});
+
+                      } else {
+                          $('#' + side[i]).css({'color': '#444'});
+                      }
+                  });
+              });
+          }
+      });
+
+  </script>
+
+</html>

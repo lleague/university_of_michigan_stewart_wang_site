@@ -1,0 +1,24 @@
+<div id="admin_publications">
+  <div class="margin_top_bottom_one center">
+    <h1>Publications</h1>
+  </div>
+  <div class="block">
+    <%= link_to("Add New Publication", new_publication_path, :class => 'blue_btn shadow new centered') %>
+  </div>
+  <div class="shadow">
+    <% @publications.each do |publication| %>
+      <div class="ninety_five padding_half <%= cycle('white_background', 'gray_background') %>">
+        <div class="twenty inline_block vertical_align">
+          <p class="inline gray bold"><%= publication.month_published %> <%= publication.year_published %></p>
+        </div>
+        <div class="sixty inline_block">
+          <p class="italic inline gray margin_none"><%= publication.name%></p>
+        </div>
+        <div class="float_right fifteen">
+          <%= link_to("delete", delete_publication_path(publication), :class => 'action delete inline float_right') %>
+          <%= link_to("edit", edit_publication_path(publication), :class => 'action edit inline float_right') %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
