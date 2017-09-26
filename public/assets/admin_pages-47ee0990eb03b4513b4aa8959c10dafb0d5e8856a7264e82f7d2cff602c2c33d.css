@@ -1,0 +1,577 @@
+/* Admin Pages stylesheet */
+/* line 4, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 19, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+html {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  height: 100%;
+}
+
+/* line 22, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+body {
+  background: #0283FF;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #00274C, #0283FF);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #00274C, #0283FF);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #00274C, #0283FF);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #00274C, #0283FF);
+  /* Standard syntax */
+  font-size: 18px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
+/* line 33, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+h1, h2, h3, h4, h5, h6, p, li, a {
+  color: #333;
+  font-weight: normal;
+}
+
+/* line 34, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+p, li, a {
+  font-size: 1em;
+}
+
+/* line 35, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+h4 {
+  font-size: 1.2em;
+}
+
+/* line 37, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+a, a:visited {
+  text-decoration: none;
+}
+
+/* line 38, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+a:hover, .btn:hover {
+  cursor: pointer;
+}
+
+/* line 39, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+input {
+  font-size: 1em;
+}
+
+/* line 41, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.one_em {
+  font-size: 1em;
+}
+
+/* line 42, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.blue_btn {
+  font-weight: normal;
+  padding: .25em 1em;
+  border-radius: 30px;
+  background-color: #4099ff;
+  border-color: #3084d8;
+  transition: all .2s ease;
+}
+/* line 49, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.blue_btn:visited {
+  color: #fff;
+}
+/* line 52, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.blue_btn:hover {
+  background-color: #3084d8;
+  border-color: #1F65AC;
+}
+
+/* line 57, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#flash {
+  z-index: 2;
+}
+
+/* line 58, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#header {
+  width: 100%;
+  background-color: #032442;
+  height: 43px;
+  top: 0px;
+  position: fixed;
+  z-index: 1;
+}
+/* line 65, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#header a, #header p {
+  color: #fff;
+}
+
+/* line 68, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#content {
+  padding-bottom: 15em;
+}
+
+/* line 69, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#login, #menu, #admin_publications, #publications_form, #admin_authors, #admin_journals {
+  position: relative;
+  width: 90%;
+  max-width: 350px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid #eee;
+  border-radius: 12px;
+  margin: 1em auto;
+  top: 200px;
+  padding: 1em;
+  text-align: center;
+}
+/* line 81, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#login p, #menu p, #admin_publications p, #publications_form p, #admin_authors p, #admin_journals p {
+  margin: .5em;
+}
+
+/* line 85, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#menu {
+  max-width: 600px;
+}
+
+/* line 86, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#admin_publications, #publications_form {
+  width: 60%;
+  max-width: none;
+  text-align: left;
+  padding: 3em;
+}
+/* line 91, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#admin_publications p, #publications_form p {
+  margin: 0;
+}
+
+/* line 93, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#admin_publications {
+  top: 100px;
+}
+
+/* line 96, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#publications_form {
+  width: 80%;
+}
+
+/* line 99, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#admin_authors, #admin_journals {
+  top: 100px;
+  max-width: 500px;
+}
+
+/* line 103, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#admin_journals {
+  max-width: 900px;
+}
+/* line 105, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#admin_journals p {
+  margin: 0;
+}
+
+/* line 107, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.action {
+  margin: 0;
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* line 108, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.delete, .edit {
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+/* line 112, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.edit {
+  color: #4099ff;
+  margin-right: 1em;
+}
+
+/* line 113, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.delete {
+  color: #CA1D1D;
+}
+
+/* line 116, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#form .text_field {
+  text-align: left;
+  display: inline;
+}
+/* line 117, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#form h4 {
+  padding-right: .5em;
+}
+/* line 118, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#form input {
+  font-size: 1em;
+}
+
+/* Text stying */
+/* line 122, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.green {
+  color: #17B471;
+}
+
+/* line 123, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.gray {
+  color: #555;
+}
+
+/* line 124, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.white {
+  color: #fff;
+}
+
+/* line 125, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.italic {
+  font-style: italic;
+}
+
+/* line 126, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 127, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.underline {
+  text-decoration: underline;
+}
+
+/* line 128, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.text_left {
+  text-align: left;
+}
+
+/* line 129, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.center {
+  text-align: center;
+}
+
+/* Background Colors */
+/* line 132, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.green_background {
+  background-color: #17B471;
+}
+
+/* line 133, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.gray_background {
+  background-color: #eee;
+}
+
+/* line 134, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.red {
+  background-color: #CA1D1D;
+}
+
+/* Positioning rules */
+/* line 137, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.right {
+  position: absolute;
+  right: 0;
+}
+
+/* line 138, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.left {
+  position: absolute;
+  left: 0;
+}
+
+/* line 139, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.float_right {
+  float: right;
+}
+
+/* line 140, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.float_left {
+  float: left;
+}
+
+/* line 141, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.inline {
+  display: inline;
+}
+
+/* line 142, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.inline_block {
+  display: inline-block;
+}
+
+/* line 143, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.block {
+  display: block;
+}
+
+/* line 144, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.vertical_align {
+  vertical-align: top;
+}
+
+/* line 145, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.left_200 {
+  left: 200px;
+}
+
+/* line 146, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.relative {
+  position: relative;
+}
+
+/* line 147, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.centered {
+  margin: auto;
+}
+
+/* widths */
+/* line 150, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.ten {
+  width: 10%;
+  min-width: 140px;
+}
+
+/* line 151, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.fifteen {
+  width: 15%;
+}
+
+/* line 152, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.twenty {
+  width: 20%;
+}
+
+/* line 153, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.forty {
+  width: 40%;
+}
+
+/* line 154, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.fifty {
+  width: 50%;
+}
+
+/* line 155, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.sixty {
+  width: 60%;
+}
+
+/* line 156, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.seventy {
+  width: 70%;
+}
+
+/* line 157, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.seventy_five {
+  width: 75%;
+}
+
+/* line 158, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.eighty {
+  width: 80%;
+}
+
+/* line 159, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.min_125 {
+  min-width: 125px;
+}
+
+/* padding and margins */
+/* line 162, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.padding_half {
+  padding: .5em;
+}
+
+/* line 163, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.padding_lr_none {
+  padding: 0;
+}
+
+/* line 164, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.padding_three_quarters {
+  padding: .75em;
+}
+
+/* line 165, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.padding_one {
+  padding: 1em;
+}
+
+/* line 166, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.padding_bottom_one {
+  padding-bottom: 1em;
+}
+
+/* line 167, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.padding_top_one {
+  padding-top: 1em;
+}
+
+/* line 168, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.padding_left_one {
+  padding-left: 1em;
+}
+
+/* line 169, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_none {
+  margin: 0;
+}
+
+/* line 170, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_half {
+  margin: .5em;
+}
+
+/* line 171, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_lr_none {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 172, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_top_quarter {
+  margin-top: .25em;
+}
+
+/* line 173, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_top_half {
+  margin-top: .5em;
+}
+
+/* line 174, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_top_one {
+  margin-top: 1em;
+}
+
+/* line 175, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_bottom_one {
+  margin-bottom: 1em;
+}
+
+/* line 176, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_bottom_two {
+  margin-bottom: 2em;
+}
+
+/* line 177, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_right_one {
+  margin-right: 1em;
+}
+
+/* line 178, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_left_one {
+  margin-left: 1em;
+}
+
+/* line 179, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.margin_top_bottom_one {
+  margin: 2em auto;
+}
+
+/* buttons */
+/* line 182, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.btn {
+  background-color: #17B471;
+  border: 3px solid #139B61;
+  padding: .25em 1em;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* line 184, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.notice {
+  height: 43px;
+  width: 100%;
+  background-color: #17B471;
+  position: absolute;
+  top: 0;
+}
+/* line 190, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.notice p {
+  color: #fff;
+  text-align: center;
+  padding-top: .75em;
+}
+
+/* line 197, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.text_field {
+  border: none;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: .25em;
+  box-shadow: 0px;
+}
+
+/* line 198, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.shadow, .shadow_change {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* line 199, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.shadow_change {
+  transition: box-shadow 0.2s ease;
+}
+
+/* line 200, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.shadow_change:hover {
+  box-shadow: 0px 0px 8px #0383ff;
+}
+
+/* line 201, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.square {
+  display: inline-block;
+  width: 25%;
+  padding: 1em .5em;
+  border-radius: 5px;
+  margin: .25em;
+}
+
+/* line 202, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.block {
+  display: block;
+}
+
+/* line 203, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+input .check_boxes.optional {
+  padding-right: 1em;
+}
+
+/* line 204, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.link {
+  text-decoration: underline;
+  color: blue;
+}
+
+/* line 208, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+#publication_journal_ids {
+  font-size: 1em;
+  width: 100%;
+  border: none;
+  height: 120px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding-left: 1em;
+}
+
+/* line 209, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.new {
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  width: 180px;
+  margin: 1em auto;
+  text-align: center;
+  border: 2px solid #3084d8;
+}
+
+/* line 211, /Users/lleague/Sites/morphomics_umbrella/app/assets/stylesheets/admin_pages.css.scss */
+.dotty {
+  border: none;
+  background-image: linear-gradient(to right, gray 33%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
