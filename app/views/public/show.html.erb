@@ -13,7 +13,7 @@
             <img class="inline_block thirty"src="<%= @ramp_page.scan_img %>">
             <div class="forty_eight inline_block">
               <div class="margin_one margin_top_none inline_block;">
-                <p class="padding_bottom_one italic"><%= @ramp_page.definition %></p>
+                <p class="padding_bottom_one italic"><%= simple_format(@ramp_page.definition) %></p>
                 <div class="tooltip">
                   <a id="control_population_btn" class="green_btn shadow regular white tooltip small">See Control Population</a>
                     <span class="tooltiptext chart_tooltip shadow_darker">

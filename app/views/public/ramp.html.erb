@@ -32,8 +32,8 @@
             <div class="ramp_content grow shadow shadow_change ninety_five white_background quarter_margin_auto <%= ramp_page.vertebrae_number %>">
               <img class ="max_150 thirty_five inline_block padding_right_one_percent padding_left_one_percent" src="<%= ramp_page.scan_img %>">
               <div class="inline_block fifty_five padding_left_one_percent padding_bottom_one">
-                <h5 class="bold padding_top_one"><%= ramp_page.name %> @ <span class="uppercase"><%= ramp_page.vertebrae_number %></span></h5>
-                <p class="italic"><%= ramp_page.definition %></p>
+                <h5 class="bold padding_top_one"><%= simple_format(ramp_page.name) %> @ <span class="uppercase"><%= ramp_page.vertebrae_number %></span></h5>
+                <p class="italic"><%= simple_format(ramp_page.definition) %></p>
               </div>
             </div>
           <% end %>

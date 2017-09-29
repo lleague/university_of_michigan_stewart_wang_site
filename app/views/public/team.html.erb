@@ -8,16 +8,46 @@
 </div>
 </div>
   <hr class="sixty TB_margin_one" style="display: block; margin: .5em auto; border-top: 2px solid #ccc;">
+  <div class="faculty centered padding_top_two ninety">
 
-  <div class="centered padding_top_two ninety">
-    <% @team_members.each do |team_member| %>
+      <!-- Show only Stu in this div -->
+      <% @team_members.where(team_member_id: 1).each do |team_member| %>
       <a id="<%= team_member.team_member_id %>" class="grow twenty_four inline_block team_member margin_top_one margin_bottom_one <%= team_member.team_member_type%>" style="min-width: 300px;">
         <div class="inline_block padding_left_half centered">
           <%= image_tag(team_member.image, :class => "block") %>
-          <h5 class="padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %> <%= team_member.degree %></h5>
-          <p class="italic"><%= team_member.title %></p>
+          <h5 class="bold padding_bottom_half padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %> <%= simple_format(team_member.degree) %></h5>
+          <p class="italic"><%= simple_format(team_member.title) %></p>
         </div>
       </a>
+      <% end %>
+
+      <!-- Show only Grace in this div -->
+      <% @team_members.where(team_member_id: 2).each do |team_member| %>
+      <a id="<%= team_member.team_member_id %>" class="grow twenty_four inline_block team_member margin_top_one margin_bottom_one <%= team_member.team_member_type%>" style="min-width: 300px;">
+        <div class="inline_block padding_left_half centered">
+          <%= image_tag(team_member.image, :class => "block") %>
+          <h5 class="bold padding_bottom_half padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %> <%= simple_format(team_member.degree) %></h5>
+          <p class="italic"><%= simple_format(team_member.title) %></p>
+        </div>
+      </a>
+      <% end %>
+  </div>
+
+    <div class="centered padding_top_two ninety">
+    <% @team_members.each do |team_member| %>
+
+    <!-- Hide Stu and Grace from team -->
+    <% if team_member.team_member_id != 2 and team_member.team_member_id != 1 %>
+
+    <!-- Print each team member -->
+      <a id="<%= team_member.team_member_id %>" class="grow twenty_four inline_block team_member margin_top_one margin_bottom_one <%= team_member.team_member_type%>" style="min-width: 300px;">
+        <div class="inline_block padding_left_half centered">
+          <%= image_tag(team_member.image, :class => "block") %>
+          <h5 class="bold padding_bottom_half padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %> <%= simple_format(team_member.degree) %></h5>
+          <p class="italic"><%= simple_format(team_member.title) %></p>
+        </div>
+      </a>
+      <% end %>
     <% end %>
   </div>
   <% @team_members.each do |team_member| %>
@@ -27,9 +57,9 @@
         <div class="exit" style="width: 100%; height: 45px;"></div>
         <%= image_tag(team_member.image, :class => "centered") %>
         <div class="padding_two">
-          <h3 class="padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %>, <%= team_member.degree %></h3>
-          <p class="italic fifty padding_one"><%= team_member.title %></p>
-          <p class="text_left"><%= team_member.bio %></p>
+          <h3 class="bold padding_bottom_half padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %>, <%= simple_format(team_member.degree) %></h3>
+          <p class="italic fifty padding_one"><%= simple_format(team_member.title) %></p>
+          <p class="text_left"><%= simple_format(team_member.bio) %></p>
         </div>
       </div>
     </div>
@@ -41,7 +71,7 @@
   $('.faculty').hide(); // hides both inputs by default
   $('.staff').hide(); // hides both inputs by default
   $('.icam_advisory_council').hide(); // hides both inputs by default
-  $('.faculty').fadeIn(1000); // hides both inputs by default
+  $('.faculty').fadeIn(200); // hides both inputs by default
 </script>
 
 <script>
@@ -52,7 +82,7 @@ $('.toggle_btn').click(function(){ // but if the user clicks one of the toggle b
   let element = event.currentTarget;
   var input_id = element.id;
   $('.team_member').hide(); // hides all team members
-  $('.team_member.'+ input_id).fadeIn(); // shows the team members that correspond to the button
+  $('.team_member.'+ input_id).fadeIn(200); // shows the team members that correspond to the button
   $('.toggle_btn').toggleClass("bright_blue"); // changes colors
 });
 </script>

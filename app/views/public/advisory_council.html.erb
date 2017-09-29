@@ -12,8 +12,8 @@
         <div class="inline_block padding_left_half centered">
           <%= image_tag(team_member.image, :class => "block") %>
           <h5 class="padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %></h5>
-          <p class="italic"><%= team_member.title %></p>
-          <p class="italic"><%= team_member.degree %></p>
+          <p class="italic"><%= simple_format(team_member.title) %></p>
+          <p class="italic"><%= simple_format(team_member.degree) %></p>
         </div>
       </a>
     <% end %>
@@ -25,9 +25,9 @@
         <div class="exit" style="width: 100%; height: 45px;"></div>
         <%= image_tag(team_member.image, :class => "centered") %>
         <h3 class="padding_top_half"><%= team_member.first_name%> <%=team_member.last_name %></h3>
-        <p class="italic"><%= team_member.title %></p>
-        <p class="italic"><%= team_member.degree %></p>
-        <p class="text_left padding_two"><%= team_member.bio %></p>
+        <p class="italic"><%= simple_format(team_member.title) %></p>
+        <p class="italic"><%= simple_format(team_member.degree) %></p>
+        <p class="text_left padding_two"><%= simple_format(team_member.bio) %></p>
       </div>
     </div>
       </div>

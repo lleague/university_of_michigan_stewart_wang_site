@@ -1,0 +1,22 @@
+
+<!-- This is the white part of the page where all the content will be. -->
+<div id="page" class="shadow">
+
+
+      <div class="eighty">
+          <h2 class="padding_bottom_half padding_top_three">All News</h2>
+          <% @news_article.each do |news_article| %>
+            <a href="<%= news_article.source %>">
+              <div class="shadow shadow_change margin_lr_none margin_bottom_one padding_one <%= cycle('white_background', 'gray_background') %>">
+              <%= image_tag news_article.image.url(:medium), :style => "max-width: 250px;", :class => "inline_block full" %>
+              <div class="relative seventy vertical_align inline_block padding_left_one_percent">
+                <h6><%= simple_format(news_article.title, :class => "italic bold", :style => "font-size: 1.2em;") %></h6>
+                <p class="padding_top_half"><%= truncate(simple_format(news_article.content, :class => "italic bold inline"), escape: false, length: 280,) %> </p>
+              </div>
+            </div>
+          </a>
+            <% end %>
+
+
+      </div> <!-- end of 80% page width wrapper -->
+    </div>

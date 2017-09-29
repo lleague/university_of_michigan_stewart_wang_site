@@ -75,17 +75,18 @@
       <div class="wrapper eighty">
         <div class="multidiv left sixty margin_right_two_percent">
           <h2 class="padding_bottom_half">In the Media</h2>
-          <% @news_article.each do |news_article| %>
+          <% @news_article.take(3).each do |news_article| %>
             <a href="<%= news_article.source %>">
               <div class="shadow shadow_change margin_lr_none margin_bottom_one padding_one <%= cycle('white_background', 'gray_background') %>">
               <%= image_tag news_article.image.url(:medium), :style => "max-width: 250px;", :class => "inline_block full" %>
-              <div class="relative fifty vertical_align inline_block padding_left_one_percent">
-                <h6 class="italic bold inline blue"><%= news_article.title %></h6>
+              <div class="relative fifty_five vertical_align inline_block padding_left_one_percent">
+                <h6><%= simple_format(news_article.title, :class => "bold", :style => "font-size: 1.2em;") %></h6>
                 <p class="padding_top_half"><%= truncate(simple_format(news_article.content, :class => "italic bold inline"), escape: false, length: 180,) %> </p>
               </div>
             </div>
           </a>
             <% end %>
+            <a class="btn blue_btn forty block centered shadow margin_top_one margin_bottom_two" style="width: 200px;" href="news">see all news</a>
 
         </div>
         <div class="multidiv thirty_seven inline_block ">
@@ -94,7 +95,7 @@
               <a href="<%= publication.source %>">
                 <div class="inline_block padding_left_half dotty padding_top_one padding_bottom_one">
                   <p class="gray"><%= publication.month_published%> <%=publication.year_published %></p>
-                  <h6 class="italic"><%= publication.name %></h6>
+                  <h6 class="italic"><%= simple_format(publication.name) %></h6>
                   <p><%= publication.authors.pluck(:name).join(", ") %></p>
                 </div>
               </a>

@@ -20,7 +20,7 @@
                 <div class="publication_teasers shift dotty ninety_five white_background padding_half gray_left" id="<%= publication.publication_id %>">
                   <div class="inline_block padding_left_half">
                     <p class="gray"><%= publication.month_published%> <%=publication.year_published %></p>
-                    <h6 class="italic"><%= publication.name %></h6>
+                    <h6 class="italic"><%= simple_format(publication.name) %></h6>
                   </div>
                 </div>
               <% end %>
@@ -34,9 +34,9 @@
           <div class="inner_shadow gray_background gray_border rounded_corners padding_half" style="height: 100%; height: 550px; overflow: scroll; ">
             <% @publications.each do |publication| %>
               <div class="abstract_content inline_block shadow padding_one rounded_corners gray_border white_background <%= publication.publication_id %>">
-                <h3 class="padding_bottom_half bold"><%= publication.name %></h3>
-                <h5 class="bold"><%= publication.authors.pluck(:name).join(", ") %></h5>
-                <h5 class="italic"><%= publication.citation %></h5>
+                <h3 class="padding_bottom_half bold"><%= simple_format(publication.name) %></h3>
+                <h5 class="bold"><%= publication.first_author %>, <%= publication.authors.pluck(:name).join(", ") %>, <%= publication.last_author %></h5>
+                <h5 class="italic"><%= simple_format(publication.citation) %></h5>
                 <p class="padding_bottom_one italic"><%= simple_format(publication.abstract)%></p>
                 <a class="blue_btn block twenty centered" style="margin: 1em auto; margin-bottom: 0;" href="<%= publication.source %>">full text</a>
               </div>

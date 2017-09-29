@@ -12,7 +12,7 @@
           <p class="inline gray bold"><%= publication.month_published %> <%= publication.year_published %></p>
         </div>
         <div class="sixty inline_block">
-          <p class="italic inline gray margin_none"><%= publication.name%></p>
+          <p class="italic inline gray margin_none"><%= simple_format(publication.name)%></p>
         </div>
         <div class="float_right fifteen">
           <%= link_to("delete", delete_publication_path(publication), :class => 'action delete inline float_right') %>

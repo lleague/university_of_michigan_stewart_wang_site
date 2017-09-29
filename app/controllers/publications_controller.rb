@@ -62,7 +62,7 @@ class PublicationsController < ApplicationController
   private
 
   def publication_params
-    params.require(:publication).permit(:publication_id, :name, :year_published, :month_published, :day_published, :citation, :source, :abstract, :author_ids => [], :journal_ids => [])
+    params.require(:publication).permit(:publication_id, :name, :year_published, :month_published, :day_published, :citation, :source, :abstract, :first_author, :last_author, :author_ids => [], :journal_ids => [])
   end
 
 end

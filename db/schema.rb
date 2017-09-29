@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920175820) do
+ActiveRecord::Schema.define(version: 20170928171840) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "first_name",      limit: 25
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20170920175820) do
     t.string  "citation",        limit: 1000
     t.string  "source",          limit: 1000
     t.string  "abstract",        limit: 10000
+    t.string  "first_author"
+    t.string  "last_author"
   end
 
   create_table "ramp", primary_key: "ramp_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

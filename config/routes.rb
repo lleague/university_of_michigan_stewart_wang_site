@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
 
   match "/publications", :to => "public#publications", :via => :all
+  match "/news", :to => "public#news", :via => :all
   match "/mag", :to => "public#mag", :via => :all
   match "/about_morphomics", :to => "public#about_morphomics", :via => :all
   match "/morphomics", :to => "public#morphomics", :via => :all

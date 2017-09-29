@@ -8,6 +8,10 @@ class PublicController < ApplicationController
     @news_article = NewsArticle.sorted
   end
 
+  def news
+    @news_article = NewsArticle.sorted
+  end
+
   def team
     @team_members = TeamMember.sorted
   end

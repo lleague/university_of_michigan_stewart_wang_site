@@ -9,10 +9,26 @@
       <%= f.text_field(:name, :class => "text_field padding_half eighty text_left relative") %>
     </div>
 
+    <!-- first_authors block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block vertical_align">
+        <h4 class="inline">First Author:</h4>
+      </div>
+          <%= f.text_field(:first_author, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
+    <!-- last_author block -->
+    <div class="padding_one padding_lr_none">
+      <div class="ten inline_block vertical_align">
+        <h4 class="inline">Last Author:</h4>
+      </div>
+          <%= f.text_field(:last_author, :class => "text_field padding_half eighty text_left relative") %>
+    </div>
+
     <!-- authors block -->
     <div class="padding_one padding_lr_none">
       <div class="ten inline_block vertical_align">
-        <h4 class="inline">Authors:</h4>
+        <h4 class="inline">Other Authors:</h4>
       </div>
       <div style="width: 80%; display: inline-block;">
         <div style="height: 120px; overflow: scroll; border: 1px solid #ccc; border-radius: 8px; padding-left: 1em;">
@@ -21,6 +37,7 @@
         <p class="padding_half">Can't find an author? Add a new one <%= link_to("here.", authors_path, :class => 'link') %></p>
       </div>
     </div>
+
 
     <!-- journals block -->
     <div class="padding_one padding_lr_none">
