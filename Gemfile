@@ -16,12 +16,12 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Allows use of simple_form
-gem 'simple_form', :git => 'git@github.com:plataformatec/simple_form.git'
+gem 'simple_form', :git => 'https://github.com/plataformatec/simple_form.git'
 
 # Allows image uploads
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", :git => 'https://github.com/thoughtbot/paperclip.git'
 
-gem 'pry', :git => 'git@github.com:pry/pry.git'
+gem 'pry', :git => 'https://github.com/pry/pry.git'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
