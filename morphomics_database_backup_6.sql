@@ -18,6 +18,7 @@
 --
 -- Table structure for table `admin_users`
 --
+USE morphomics_umbrella_development;
 
 DROP TABLE IF EXISTS `admin_users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
