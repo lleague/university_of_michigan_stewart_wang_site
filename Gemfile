@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Makes it so that the asset pipeline produces non-fingerprinted assets as well as fingerprinted ones. I did this so that the static pages can use images from /assets.
 gem 'non-stupid-digest-assets'
+
+gem 'ssl_requirement'
