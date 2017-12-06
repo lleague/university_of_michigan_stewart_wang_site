@@ -6,11 +6,6 @@ class ApplicationController < ActionController::Base
     false
   end
 
-  def block_foreign_hosts
-    return false if whitelisted?(request.remote_ip)
-    redirect_to "https://www.google.com" unless request.remote_ip.start_with?("123.456.789")
-  end
-
   protect_from_forgery with: :exception
   #include SslRequirement
   private
